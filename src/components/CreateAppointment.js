@@ -1,7 +1,11 @@
+import Navbar from './Navbar'
+
+
 function CreateAppointment() {
   return (
     <div>
-      <button>Create Appointment</button>
+      <Navbar />
+      <h1>Create Appointment</h1>
     </div>
   )
 }

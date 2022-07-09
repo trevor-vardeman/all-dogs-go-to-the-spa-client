@@ -1,6 +1,11 @@
+import Navbar from './Navbar'
+
 function Dogs() {
   return (
-    <div>Dogs</div>
+    <div>
+      <Navbar />
+      <h1>Dogs</h1>
+    </div>
   )
 }
 

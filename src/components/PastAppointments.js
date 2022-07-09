@@ -1,6 +1,11 @@
+import Navbar from './Navbar'
+
 function PastAppointments() {
   return (
-    <div>PastAppointments</div>
+    <div>
+      <Navbar />
+      <h1>Past Appointments</h1>
+    </div>
   )
 }
 

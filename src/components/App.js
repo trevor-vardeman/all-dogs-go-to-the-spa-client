@@ -1,15 +1,15 @@
-import '../App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import '../App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Container from './Container'
+import Navbar from './Navbar'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Container />
-      </header>
+      <Navbar />
+      <Container />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

@@ -1,6 +1,11 @@
+import Navbar from './Navbar'
+
 function Services() {
   return (
-    <div>Services</div>
+    <div>
+      <Navbar />
+      <h1>Services</h1>
+    </div>
   )
 }
 

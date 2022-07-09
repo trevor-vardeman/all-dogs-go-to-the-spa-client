@@ -1,7 +1,13 @@
+import Navbar from './Navbar'
+
+
 function UpcomingAppointments() {
   return (
-    <div>UpcomingAppointments</div>
+    <div>
+      <Navbar />
+      <h1>Upcoming Appointments</h1>
+    </div>
   )
 }
 
-export default UpcomingAppointments
+export default UpcomingAppointments  
