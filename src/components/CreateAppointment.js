@@ -18,7 +18,6 @@ function CreateAppointment() {
     fetch("http://localhost:9292/create-appointment")
       .then((r) => r.json())
       .then((array) => {
-        console.log(array[0])
         setDogs(array[0])
         setGroomers(array[1])
         setServices(array[2])
@@ -80,7 +79,7 @@ function CreateAppointment() {
           <Dropdown.Item onClick={(e) => setServiceSelect(e.target.innerText)} key={service.id} eventKey={service.name}>{service.name}</Dropdown.Item>
         ))}
       </DropdownButton>
-      <label for="meeting-time">Choose a time for your appointment:</label>
+      <label>Choose a time for your appointment:</label>
 
       <Form>
         <Form.Group className="mb-3">
