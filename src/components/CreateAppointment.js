@@ -55,6 +55,7 @@ function CreateAppointment() {
   return (
     <div>
       <Navbar />
+      <h2>Create an Appointment</h2>
       <DropdownButton
         title={dogSelect === "" ? "Select a Dog" : dogSelect}
         id="dropdown-menu-align-right"
