@@ -35,21 +35,21 @@ function CreateAppointment() {
       service_id: serviceId,
       appt_datetime: appointmentTime,
     }
-      fetch("http://localhost:9292/create-appointment", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(appointmentData),
+
+    fetch("http://localhost:9292/create-appointment", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(appointmentData),
+    })
+      .then(() => {
+        alert("Appointment saved!")
+        setDogSelect("")
+        setGroomerSelect("")
+        setServiceSelect("")
+        setAppointmentTime("")
       })
-        .then(res => res.json())
-        .then(() => {
-          alert("Appointment saved!")
-          setDogSelect("")
-          setGroomerSelect("")
-          setServiceSelect("")
-          setAppointmentTime("")
-        })
     }
 
   return (
