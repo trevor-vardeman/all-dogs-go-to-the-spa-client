@@ -35,7 +35,6 @@ function CreateAppointment() {
       service_id: serviceId,
       appt_datetime: appointmentTime,
     }
-
     fetch("http://localhost:9292/create-appointment", {
       method: "POST",
       headers: {

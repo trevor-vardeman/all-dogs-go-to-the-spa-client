@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import Button from 'react-bootstrap/Button';
 import Navbar from './Navbar'
 
 
@@ -6,24 +7,29 @@ function UpcomingAppointments() {
   const [upcomingAppointments, setUpcomingAppointments] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:9292/upcoming-appointments")
+    fetch("http://localhost:9292/appointments")
       .then(r => r.json())
       .then(data => setUpcomingAppointments(data))
       .catch(err => alert(err.message))
   },[])
 
+  function handleDelete(apptId) {
+    fetch(`http://localhost:9292/appointments/${apptId}`, {
+      method: "DELETE",
+    })
+    const updatedAppointments = upcomingAppointments.filter((appt) => appt.id !== apptId)
+    setUpcomingAppointments(updatedAppointments)
+  }
+
   return (
     <div>
       <Navbar />
       <div>
-        {/* {!upcomingAppointments 
-        ? {upcomingAppointments.map((appt) => (
-            <h3 key={appt.id}>{appt}</h3>
-          ))}
-        : null} */}
         <h2>Upcoming Appointments</h2>
         {upcomingAppointments.map((appt) => (
           <div key={appt.id}>
+            <Button onClick={() => handleDelete(appt.id)} size="sm" variant="outline-dark">x</Button>
+            <h1>{appt.id}</h1>
             <h6>Appointment date/time: </h6>
             <h6>Dog: {appt.dog_id}</h6>
             <h6>Groomer: {appt.groomer_id}</h6>
