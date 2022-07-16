@@ -5,7 +5,7 @@ function PastAppointments() {
   const [pastAppointments, setPastAppointments] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:9292/appointments")
+    fetch("http://localhost:9292/past-appointments")
       .then(r => r.json())
       .then(data => setPastAppointments(data))
       .catch(err => alert(err.message))

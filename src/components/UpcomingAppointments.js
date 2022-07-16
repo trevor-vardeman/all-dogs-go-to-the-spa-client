@@ -21,6 +21,19 @@ function UpcomingAppointments() {
     setUpcomingAppointments(updatedAppointments)
   }
 
+  function handleEdit(apptId) {
+    console.log(apptId)
+    // fetch(`http://localhost:9292/appointments/${appt}`, {
+    //   method: "PATCH",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   bodoy: JSON.stringify({
+    //     body:
+    //   })
+    // })
+  }
+
   return (
     <div>
       <Navbar />
@@ -28,6 +41,7 @@ function UpcomingAppointments() {
         <h2>Upcoming Appointments</h2>
         {upcomingAppointments.map((appt) => (
           <div key={appt.id}>
+            <Button onClick={() => handleEdit(appt.id)} size="sm" variant="dark">Edit</Button>
             <Button onClick={() => handleDelete(appt.id)} size="sm" variant="outline-dark">x</Button>
             <h1>{appt.id}</h1>
             <h6>Appointment date/time: </h6>
