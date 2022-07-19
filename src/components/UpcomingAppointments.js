@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button'
+import Stack from 'react-bootstrap/Stack'
 import Navbar from './Navbar'
-
+import AppointmentNav from './AppointmentNav'
 
 function UpcomingAppointments() {
   const [upcomingAppointments, setUpcomingAppointments] = useState([])
@@ -35,10 +36,12 @@ function UpcomingAppointments() {
   }
 
   return (
-    <div>
+    <Stack gap={3}>
       <Navbar />
-      <div>
+      <AppointmentNav />
+      <Stack gap={3}>
         <h2>Upcoming Appointments</h2>
+        <h6>Edit Appointments</h6>
         {upcomingAppointments.map((appt) => (
           <div key={appt.id}>
             <Button onClick={() => handleEdit(appt.id)} size="sm" variant="dark">Edit</Button>
@@ -47,13 +50,13 @@ function UpcomingAppointments() {
             <h6>Appointment date/time: </h6>
             <h6>Dog: {appt.dog_id}</h6>
             <h6>Groomer: {appt.groomer_id}</h6>
-            <h6>Service:{appt.service_id}</h6>
+            <h6>Service: {appt.service_id}</h6>
             <h6>Length: </h6>
             <h6>Cost: </h6>
           </div>
           ))}
-      </div>
-    </div>
+      </Stack>
+    </Stack>
   )
 }
 

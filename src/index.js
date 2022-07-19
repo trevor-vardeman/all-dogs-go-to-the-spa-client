@@ -6,6 +6,7 @@ import {
   Routes,
   Route,
 } from "react-router-dom"
+import Appointments from './components/Appointments'
 import CreateAppointment from './components/CreateAppointment'
 import UpcomingAppointments from './components/UpcomingAppointments'
 import PastAppointments from './components/PastAppointments'
@@ -22,7 +23,9 @@ root.render(
       <Routes>
         <Route path="/" element={<App />} />
         <Route path="/create-appointment" element={<CreateAppointment />} />
-        <Route path="/appointments" element={<UpcomingAppointments />} />
+        <Route path="/appointments" element={<Appointments />} />
+        <Route path="/appointments/:id" element={<Appointments />} />
+        <Route path="/upcoming-appointments" element={<UpcomingAppointments />} />
         <Route path="/past-appointments" element={<PastAppointments />} />
         <Route path="/dogs" element={<Dogs />} />
         <Route path="/groomers" element={<Groomers />} />

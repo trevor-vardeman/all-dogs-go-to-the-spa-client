@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Navbar from './Navbar'
+import Stack from 'react-bootstrap/Stack'
 
 function Services() {
   const [services, setServices] = useState([])
@@ -12,9 +13,9 @@ function Services() {
   },[])
 
   return (
-    <div>
+    <Stack gap={3}>
       <Navbar />
-      <div>
+      <Stack gap={3}>
         <h2>Services</h2>
         {services.map((service) => (
           <div key={service.id}>
@@ -24,8 +25,8 @@ function Services() {
             <h6>Service Length: {service.service_length} minutes</h6>
           </div>
         ))}
-      </div>
-    </div>
+      </Stack>
+    </Stack>
   )
 }
 

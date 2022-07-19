@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import Navbar from './Navbar'
+import AppointmentNav from './AppointmentNav'
+import Stack from 'react-bootstrap/Stack'
 
 function PastAppointments() {
   const [pastAppointments, setPastAppointments] = useState([])
@@ -12,14 +14,10 @@ function PastAppointments() {
   },[])
 
   return (
-    <div>
+    <Stack gap={3}>
       <Navbar />
-      <div>
-        {/* {!upcomingAppointments 
-        ? {upcomingAppointments.map((appt) => (
-            <h3 key={appt.id}>{appt}</h3>
-          ))}
-        : null} */}
+      <AppointmentNav />
+      <Stack gap={3}>
         <h2>Past Appointments</h2>
         {pastAppointments.map((appt) => (
           <div key={appt.id}>
@@ -31,8 +29,8 @@ function PastAppointments() {
             <h6>Cost: </h6>
           </div>
           ))}
-      </div>
-    </div>
+      </Stack>
+    </Stack>
   )
 }
 

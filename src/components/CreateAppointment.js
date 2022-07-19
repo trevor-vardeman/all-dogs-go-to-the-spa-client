@@ -1,8 +1,10 @@
 import Navbar from './Navbar'
+import AppointmentNav from './AppointmentNav'
 import Form from 'react-bootstrap/Form'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Button from 'react-bootstrap/Button'
+import Stack from 'react-bootstrap/Stack'
 import { useState, useEffect } from 'react'
 
 function CreateAppointment() {
@@ -52,43 +54,46 @@ function CreateAppointment() {
     }
 
   return (
-    <div>
+    <Stack gap={3}>
       <Navbar />
+      <AppointmentNav />
       <h2>Create an Appointment</h2>
-      <DropdownButton
-        title={dogSelect === "" ? "Select a Dog" : dogSelect}
-        id="dropdown-menu-align-right"
-      >
-        {dogs.map((dog) => (
-          <Dropdown.Item onClick={(e) => setDogSelect(e.target.innerText)} key={dog.id} eventKey={dog.name}>{dog.name}</Dropdown.Item>
-        ))}
-      </DropdownButton>
-      <DropdownButton
-        title={groomerSelect === "" ? "Select a Groomer" : groomerSelect}
-        id="dropdown-menu-align-right"
-      >
-        {groomers.map((groomer) => (
-          <Dropdown.Item onClick={(e) => setGroomerSelect(e.target.innerText)} key={groomer.id} eventKey={groomer.name}>{groomer.name}</Dropdown.Item>
-        ))}
-      </DropdownButton>
-      <DropdownButton
-        title={serviceSelect === "" ? "Select a Service" : serviceSelect}
-        id="dropdown-menu-align-right"
-      >
-        {services.map((service) => (
-          <Dropdown.Item onClick={(e) => setServiceSelect(e.target.innerText)} key={service.id} eventKey={service.name}>{service.name}</Dropdown.Item>
-        ))}
-      </DropdownButton>
-      <label>Choose a time for your appointment:</label>
+      <Stack gap={3}>
+        <DropdownButton
+          title={dogSelect === "" ? "Select a Dog" : dogSelect}
+          id="dropdown-menu-align-right"
+        >
+          {dogs.map((dog) => (
+            <Dropdown.Item onClick={(e) => setDogSelect(e.target.innerText)} key={dog.id} eventKey={dog.name}>{dog.name}</Dropdown.Item>
+          ))}
+        </DropdownButton>
+        <DropdownButton
+          title={groomerSelect === "" ? "Select a Groomer" : groomerSelect}
+          id="dropdown-menu-align-right"
+        >
+          {groomers.map((groomer) => (
+            <Dropdown.Item onClick={(e) => setGroomerSelect(e.target.innerText)} key={groomer.id} eventKey={groomer.name}>{groomer.name}</Dropdown.Item>
+          ))}
+        </DropdownButton>
+        <DropdownButton
+          title={serviceSelect === "" ? "Select a Service" : serviceSelect}
+          id="dropdown-menu-align-right"
+        >
+          {services.map((service) => (
+            <Dropdown.Item onClick={(e) => setServiceSelect(e.target.innerText)} key={service.id} eventKey={service.name}>{service.name}</Dropdown.Item>
+          ))}
+        </DropdownButton>
+        <label>Choose a time for your appointment:</label>
 
-      <Form>
-        <Form.Group className="mb-3">
-          <Form.Label>Appointment time</Form.Label>
-          <Form.Control onChange={(e) => setAppointmentTime(e.target.value)} type="datetime-local" size="sm" placeholder="Select a time for the appointment" />
-        </Form.Group>
-        <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />
-      </Form>
-    </div>
+        <Form>
+          <Form.Group className="mb-3">
+            <Form.Label>Appointment time</Form.Label>
+            <Form.Control onChange={(e) => setAppointmentTime(e.target.value)} type="datetime-local" size="sm" placeholder="Select a time for the appointment" />
+          </Form.Group>
+          <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />
+        </Form>
+      </Stack>
+    </Stack>
   )
 }
 

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import Navbar from './Navbar'
+import Stack from 'react-bootstrap/Stack'
 
 function Groomers() {
   const [groomers, setGroomers] = useState([])
@@ -12,17 +13,19 @@ function Groomers() {
   },[])
 
   return (
-    <div>
+    <Stack gap={3}>
       <Navbar />
-      <div>
+      <Stack gap={3}>
         <h2>Groomers</h2>
         {groomers.map((groomer) => (
           <div key={groomer.id}>
             <h6><strong>{groomer.name}</strong></h6>
+            <h6>Onboarding date: {groomer.created_at}</h6>
+            <h6>Offboarding date: {groomer.offboarding_date}</h6>
           </div>
         ))}
-      </div>
-    </div>
+      </Stack>
+    </Stack>
   )
 }
 
