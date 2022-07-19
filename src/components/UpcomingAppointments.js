@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react'
-import Button from 'react-bootstrap/Button'
+import { useNavigate } from "react-router-dom"
 import Stack from 'react-bootstrap/Stack'
 import Navbar from './Navbar'
 import AppointmentNav from './AppointmentNav'
 
-function UpcomingAppointments() {
+function UpcomingAppointments(props) {
   const [upcomingAppointments, setUpcomingAppointments] = useState([])
+
+  let navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://localhost:9292/appointments")
@@ -14,25 +16,9 @@ function UpcomingAppointments() {
       .catch(err => alert(err.message))
   },[])
 
-  function handleDelete(apptId) {
-    fetch(`http://localhost:9292/appointments/${apptId}`, {
-      method: "DELETE",
-    })
-    const updatedAppointments = upcomingAppointments.filter((appt) => appt.id !== apptId)
-    setUpcomingAppointments(updatedAppointments)
-  }
-
-  function handleEdit(apptId) {
+  function handleclick(apptId) {
     console.log(apptId)
-    // fetch(`http://localhost:9292/appointments/${appt}`, {
-    //   method: "PATCH",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   bodoy: JSON.stringify({
-    //     body:
-    //   })
-    // })
+    // navigate(`/appointments/${apptId}`)
   }
 
   return (
@@ -41,11 +27,8 @@ function UpcomingAppointments() {
       <AppointmentNav />
       <Stack gap={3}>
         <h2>Upcoming Appointments</h2>
-        <h6>Edit Appointments</h6>
         {upcomingAppointments.map((appt) => (
-          <div key={appt.id}>
-            <Button onClick={() => handleEdit(appt.id)} size="sm" variant="dark">Edit</Button>
-            <Button onClick={() => handleDelete(appt.id)} size="sm" variant="outline-dark">x</Button>
+          <div key={appt.id} onClick={() => handleclick(appt.id)}>
             <h1>{appt.id}</h1>
             <h6>Appointment date/time: </h6>
             <h6>Dog: {appt.dog_id}</h6>
