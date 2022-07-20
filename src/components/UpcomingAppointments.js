@@ -17,7 +17,6 @@ function UpcomingAppointments(props) {
   },[])
 
   function handleclick(apptId) {
-    console.log(apptId)
     navigate(`/appointments/${apptId}`)
   }
 
