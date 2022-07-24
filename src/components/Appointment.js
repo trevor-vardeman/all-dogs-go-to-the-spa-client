@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 import Stack from 'react-bootstrap/Stack'
 import Form from 'react-bootstrap/Form'
 import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -12,10 +12,10 @@ function Appointment() {
   const [appointment, setAppointment] = useState(null)
   const [editMode, setEditMode] = useState(false)
 
-  let navigate = useNavigate()
+  const navigate = useNavigate()
+  const {id} = useParams()
 
   useEffect(() => {
-    let id = document.location.href.split('/')[4]
     fetch(`http://localhost:9292/appointments/${id}`)
       .then(r => r.json())
       .then(appointment => setAppointment(appointment))
@@ -27,7 +27,7 @@ function Appointment() {
       method: "DELETE",
     })
       .then(() => setAppointment(null))
-      .then(() => navigate("/appointments"))
+      .then(() => navigate("/upcoming-appointments"))
   }
 
   function handleEdit(apptId) {
