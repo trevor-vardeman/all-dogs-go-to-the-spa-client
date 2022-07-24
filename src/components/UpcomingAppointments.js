@@ -4,7 +4,7 @@ import Stack from 'react-bootstrap/Stack'
 import Navbar from './Navbar'
 import AppointmentNav from './AppointmentNav'
 
-function UpcomingAppointments(props) {
+function UpcomingAppointments() {
   const [upcomingAppointments, setUpcomingAppointments] = useState([])
 
   let navigate = useNavigate()

@@ -52,13 +52,16 @@ function Appointment() {
           <div key={appointment.id}>
             <Button onClick={() => handleEdit(appointment.id)} size="sm" variant="dark">Edit</Button>
             <Button onClick={() => handleDelete(appointment.id)} size="sm" variant="outline-dark">x</Button>
-            <h1>{appointment.id}</h1>
-            <h6>Appointment date/time: </h6>
-            <h6>Dog: {appointment.dog_id}</h6>
-            <h6>Groomer: {appointment.groomer_id}</h6>
-            <h6>Service: {appointment.service_id}</h6>
-            <h6>Length: </h6>
-            <h6>Cost: </h6>
+            <br></br>
+            <img style={{maxWidth: "300px", maxHeight: "300px"}} src={appointment.dog.photo_url} alt={`${appointment.dog.name} the ${appointment.dog.breed}`}/>
+            <h6>Appointment date/time: {appointment.appt_datetime}</h6>
+            <h6>Dog: {appointment.dog.name}</h6>
+            <h6>{appointment.dog.name}'s Age: {appointment.dog.age}</h6>
+            <h6>{appointment.dog.name}'s Breed: {appointment.dog.breed}</h6>
+            <h6>Groomer: {appointment.groomer.name}</h6>
+            <h6>Service: {appointment.service.name}</h6>
+            <h6>Length: {appointment.service.service_length} minutes</h6>
+            <h6>Cost: ${appointment.service.cost}</h6>
           </div>
         : null
       //   <Stack gap={3}>
