@@ -24,11 +24,10 @@ function Dogs() {
     fetch(`http://localhost:9292/dogs/${id}`, {
       method: "DELETE",
     })
-      .then(() => console.log(null))
-      .then(() => {
-        alert("Dog deleted!")
-      })
-  }
+      .then(() => setDogs([...dogs.filter(dog => dog.id !== id)]))
+      .then(() => alert("Dog deleted!"))
+      .catch(err => alert(err))
+  } 
 
   return (
     <Stack gap={3}>
