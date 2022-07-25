@@ -55,7 +55,7 @@ function Appointment() {
     //   headers: {
     //     "Content-Type": "application/json",
     //   },
-    //   bodoy: JSON.stringify({
+    //   body: JSON.stringify({
     //     body:
     //   })
     // })

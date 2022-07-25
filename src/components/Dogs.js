@@ -21,12 +21,23 @@ function Dogs() {
     navigate(`/create-dog`)
   }
 
-  function handleDelete(id) {
-    fetch(`http://localhost:9292/dogs/${id}`, {
-      method: "DELETE",
+  function handleArchive(dog) {
+    const dogData = {
+      name: dog.name,
+      breed: dog.breed,
+      age: dog.age,
+      photo_url: dog.photo_url,
+      archived: true,
+    }
+    fetch(`http://localhost:9292/dogs/${dog.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dogData),
     })
-      .then(() => setDogs([...dogs.filter(dog => dog.id !== id)]))
-      .then(() => alert("Dog deleted!"))
+      .then(() => setDogs([...dogs.filter(dogs => dogs.id !== dog.id)]))
+      .then(() => alert("Dog archived!"))
       .catch(err => alert(err))
   } 
 
@@ -35,11 +46,10 @@ function Dogs() {
       <Navbar />
       <DogNav />
       <Stack gap={3}>
-        <h2>Dogs</h2>
-        <Button onClick={handleclick} style={{width: "fit-content"}}>Create a Dog Profile</Button>
+        <h2>Active Dogs</h2>
         {dogs.map((dog) => (
           <div key={dog.id}>
-            <Button onClick={() => handleDelete(dog.id)} size="sm" variant="danger">Delete Dog</Button>
+            <Button onClick={() => handleArchive(dog)} size="sm" variant="danger">Archive Dog</Button>
             <h6><strong>{dog.name}</strong></h6>
             <h6>Breed: {dog.breed}</h6>
             <h6>Age: {dog.age}</h6>
