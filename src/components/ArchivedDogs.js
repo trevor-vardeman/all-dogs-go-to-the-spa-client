@@ -30,7 +30,7 @@ function ArchivedDogs() {
       body: JSON.stringify(dogData),
     })
       .then(() => setArchivedDogs([...archivedDogs.filter(dogs => dogs.id !== dog.id)]))
-      .then(() => alert("Dog unarchived!"))
+      .then(() => alert(`${dog.name} unarchived!`))
       .catch(err => alert(err))
   } 
 
