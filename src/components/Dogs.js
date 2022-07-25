@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
 import Navbar from './Navbar'
+import DogNav from './DogNav'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 
@@ -32,9 +33,10 @@ function Dogs() {
   return (
     <Stack gap={3}>
       <Navbar />
+      <DogNav />
       <Stack gap={3}>
         <h2>Dogs</h2>
-        <Button onClick={handleclick}>Create a Dog Profile</Button>
+        <Button onClick={handleclick} style={{width: "fit-content"}}>Create a Dog Profile</Button>
         {dogs.map((dog) => (
           <div key={dog.id}>
             <Button onClick={() => handleDelete(dog.id)} size="sm" variant="danger">Delete Dog</Button>

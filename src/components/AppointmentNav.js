@@ -1,7 +1,7 @@
-import { Link, Route } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import Stack from 'react-bootstrap/Stack'
 
-function AppointmentNav({ handleApptSelection, currentAppointmentId }) {
+function AppointmentNav() {
   return (
     <Stack gap={3} direction="horizontal">
       <Link to='/upcoming-appointments'>Upcoming Appointments</Link>
