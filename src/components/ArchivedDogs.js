@@ -14,9 +14,25 @@ function ArchivedDogs() {
       .catch(err => alert(err.message))
   },[])
 
-  function handleUnarchive(id) {
-    
-  }
+  function handleUnarchive(dog) {
+    const dogData = {
+      name: dog.name,
+      breed: dog.breed,
+      age: dog.age,
+      photo_url: dog.photo_url,
+      archived: false,
+    }
+    fetch(`http://localhost:9292/dogs/${dog.id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(dogData),
+    })
+      .then(() => setArchivedDogs([...archivedDogs.filter(dogs => dogs.id !== dog.id)]))
+      .then(() => alert("Dog unarchived!"))
+      .catch(err => alert(err))
+  } 
 
   return (
     <Stack gap={3}>
@@ -26,7 +42,7 @@ function ArchivedDogs() {
         <h2>Archived Dogs</h2>
         {archivedDogs.map((dog) => (
           <div key={dog.id}>
-            <Button onClick={() => handleUnarchive(dog.id)} size="sm" variant="danger">Unarchive Dog</Button>
+            <Button onClick={() => handleUnarchive(dog)} size="sm" variant="danger">Unarchive Dog</Button>
             <h6><strong>{dog.name}</strong></h6>
             <h6>Breed: {dog.breed}</h6>
             <h6>Age: {dog.age}</h6>
