@@ -10,20 +10,19 @@ function CreateDog() {
   const [breed, setBreed] = useState("")
   const [age, setAge] = useState("")
   const [photo_url, setPhoto_url] = useState("")
-  const [randomDogPhoto, setRandomDogPhoto] = useState("")
   
   let navigate = useNavigate()
 
   useEffect(() => {
     fetch("https://dog.ceo/api/breeds/image/random")
       .then(r => r.json())
-      .then(data => setRandomDogPhoto(data.message))
+      .then(data => setPhoto_url(data.message))
       .catch(err => alert(err.message))
   },[])
 
   function handleSubmit(e) {
     e.preventDefault()
-    
+
     const dog = {
       name: name,
       breed: breed,
@@ -68,7 +67,7 @@ function CreateDog() {
           <Form.Label>Dog's Photo</Form.Label>
           <Form.Control onChange={(e) => setPhoto_url(e.target.value)} value={photo_url} type="text" placeholder="Enter a URL to the dog's photo..."/>
           <Form.Text className="text-muted">
-          If you don't provide a photo, a random photo will be used.
+          If you don't provide a photo, the random photo above will be used.
         </Form.Text>
         </Form.Group>
       </Form>
