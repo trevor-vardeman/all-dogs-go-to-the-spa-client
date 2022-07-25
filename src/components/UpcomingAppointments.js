@@ -12,10 +12,7 @@ function UpcomingAppointments() {
   useEffect(() => {
     fetch("http://localhost:9292/appointments")
       .then(r => r.json())
-      .then(data => {
-        console.log(data)
-        setUpcomingAppointments(data)
-      })
+      .then(data => setUpcomingAppointments(data))
       .catch(err => alert(err.message))
   },[])
 

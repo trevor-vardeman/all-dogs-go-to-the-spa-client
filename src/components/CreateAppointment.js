@@ -83,11 +83,9 @@ function CreateAppointment() {
             <Dropdown.Item onClick={(e) => setServiceSelect(e.target.innerText)} key={service.id} eventKey={service.name}>{service.name}</Dropdown.Item>
           ))}
         </DropdownButton>
-        <label>Choose a time for your appointment:</label>
-
         <Form>
           <Form.Group className="mb-3">
-            <Form.Label>Appointment time</Form.Label>
+            <Form.Label>Appointment date/time:</Form.Label>
             <Form.Control onChange={(e) => setAppointmentTime(e.target.value)} type="datetime-local" size="sm" placeholder="Select a time for the appointment" />
           </Form.Group>
           <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />
