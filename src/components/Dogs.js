@@ -1,9 +1,13 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom"
 import Navbar from './Navbar'
 import Stack from 'react-bootstrap/Stack'
+import Button from 'react-bootstrap/Button'
 
 function Dogs() {
   const [dogs, setDogs] = useState([])
+
+  let navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://localhost:9292/dogs")
@@ -12,17 +16,33 @@ function Dogs() {
       .catch(err => alert(err.message))
   },[])
 
+  function handleclick() {
+    navigate(`/create-dog`)
+  }
+
+  function handleDelete(id) {
+    fetch(`http://localhost:9292/dogs/${id}`, {
+      method: "DELETE",
+    })
+      .then(() => console.log(null))
+      .then(() => {
+        alert("Dog deleted!")
+      })
+  }
+
   return (
     <Stack gap={3}>
       <Navbar />
       <Stack gap={3}>
         <h2>Dogs</h2>
+        <Button onClick={handleclick}>Create a Dog Profile</Button>
         {dogs.map((dog) => (
           <div key={dog.id}>
+            <Button onClick={() => handleDelete(dog.id)} size="sm" variant="danger">Delete Dog</Button>
             <h6><strong>{dog.name}</strong></h6>
             <h6>Breed: {dog.breed}</h6>
             <h6>Age: {dog.age}</h6>
-            <img style={{maxWidth: "300px", maxHeight: "300px"}} src={dog.photo_url} alt={`${dog.name} the ${dog.breed}`}/>
+            <img style={{maxWidth: "200px", maxHeight: "200px"}} src={dog.photo_url} alt={`${dog.name} the ${dog.breed}`}/>
           </div>
         ))}
       </Stack>

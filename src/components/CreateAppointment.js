@@ -58,6 +58,7 @@ function CreateAppointment() {
       <Navbar />
       <AppointmentNav />
       <h2>Create an Appointment</h2>
+      <p>If you don't see a dog, groomer, or service, go to their pages above to create a new profile.</p>
       <Stack gap={3}>
         <DropdownButton
           title={dogSelect === "" ? "Select a Dog" : dogSelect}
