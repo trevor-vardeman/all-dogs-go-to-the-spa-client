@@ -1,25 +1,12 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from "react-router-dom"
 import Stack from 'react-bootstrap/Stack'
-import Form from 'react-bootstrap/Form'
-import DropdownButton from 'react-bootstrap/DropdownButton'
-import Dropdown from 'react-bootstrap/Dropdown'
 import Button from 'react-bootstrap/Button'
 import Navbar from './Navbar'
 import AppointmentNav from './AppointmentNav'
-import EditAppointment from './EditAppointment'
 
 function Appointment() {
   const [appointment, setAppointment] = useState(null)
-  // const [editMode, setEditMode] = useState(false)
-
-  // const [dogs, setDogs] = useState([])
-  // const [groomers, setGroomers] = useState([])
-  // const [services, setServices] = useState([])
-  // const [dogSelect, setDogSelect] = useState("")
-  // const [groomerSelect, setGroomerSelect] = useState("")
-  // const [serviceSelect, setServiceSelect] = useState("")
-  // const [appointmentTime, setAppointmentTime] = useState("")
 
   const navigate = useNavigate()
   const {id} = useParams()
@@ -27,13 +14,7 @@ function Appointment() {
   useEffect(() => {
     fetch(`http://localhost:9292/appointments/${id}`)
       .then(r => r.json())
-      .then(appointment => {
-        setAppointment(appointment)
-        // setDogSelect(appointment.dog.name)
-        // setGroomerSelect(appointment.groomer.name)
-        // setServiceSelect(appointment.service.name)
-        // setAppointmentTime(appointment.appt_datetime)
-      })
+      .then(appointment => setAppointment(appointment))
       .catch(() => alert("Appointment not found!"))
   },[id])
 
@@ -50,15 +31,6 @@ function Appointment() {
 
   function handleEdit(id) {
     navigate(`/appointments/edit/${id}`)
-    // fetch(`http://localhost:9292/appointments/${appt}`, {
-    //   method: "PATCH",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    //   body: JSON.stringify({
-    //     body:
-    //   })
-    // })
   }
 
   return (

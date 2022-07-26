@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
-import Form from 'react-bootstrap/Form'
 import Navbar from './Navbar'
 import DogNav from './DogNav'
+import Form from 'react-bootstrap/Form'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 
@@ -53,6 +53,7 @@ function CreateDog() {
     <Stack gap={3}>
       <Navbar />
       <DogNav />
+      <h2>Create a Dog Profile</h2>
       <Form>
         <Form.Group className="mb-3">
           <Form.Label>Dog's Name</Form.Label>

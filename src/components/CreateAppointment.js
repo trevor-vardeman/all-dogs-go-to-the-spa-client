@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Navbar from './Navbar'
 import AppointmentNav from './AppointmentNav'
 import Form from 'react-bootstrap/Form'
@@ -5,7 +6,6 @@ import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
 import Button from 'react-bootstrap/Button'
 import Stack from 'react-bootstrap/Stack'
-import { useState, useEffect } from 'react'
 
 function CreateAppointment() {
   const [dogs, setDogs] = useState([])
@@ -87,7 +87,7 @@ function CreateAppointment() {
         <Form>
           <Form.Group className="mb-3">
             <Form.Label>Appointment date/time:</Form.Label>
-            <Form.Control onChange={(e) => setAppointmentTime(e.target.value)} type="datetime-local" size="sm" placeholder="Select a time for the appointment" />
+            <Form.Control onChange={(e) => setAppointmentTime(e.target.value)} type="datetime-local" size="sm" />
           </Form.Group>
           <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />
         </Form>

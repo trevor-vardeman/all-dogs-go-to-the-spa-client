@@ -16,6 +16,8 @@ import Dogs from './components/Dogs'
 import ArchivedDogs from './components/ArchivedDogs'
 import CreateDog from './components/CreateDog'
 import Groomers from './components/Groomers'
+import CreateGroomer from './components/CreateGroomer'
+import OffboardedGroomers from './components/OffboardedGroomers'
 import Services from './components/Services'
 import App from './components/App'
 
@@ -35,6 +37,8 @@ root.render(
         <Route path="/create-dog" element={<CreateDog />} />
         <Route path="/archived-dogs" element={<ArchivedDogs />} />
         <Route path="/groomers" element={<Groomers />} />
+        <Route path="/create-groomer" element={<CreateGroomer />} />
+        <Route path="/offboarded-groomers" element={<OffboardedGroomers />} />
         <Route path="/services" element={<Services />} />
       </Routes>
     </BrowserRouter>

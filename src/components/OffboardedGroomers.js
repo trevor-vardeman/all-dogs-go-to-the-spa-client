@@ -1,17 +1,17 @@
 import { useState, useEffect } from 'react'
 import Navbar from './Navbar'
+import GroomerNav from './GroomerNav'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
-import GroomerNav from './GroomerNav'
 
-function Groomers() {
-  const [groomers, setGroomers] = useState([])
+function OffboardedGroomers() {
+  const [offboardedGroomers, setOffboardedGroomers] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:9292/groomers")
-      .then(r => r.json())
-      .then(data => setGroomers(data))
-      .catch(err => alert(err.message))
+    fetch("http://localhost:9292/offboarded-groomers")
+    .then(r => r.json())
+    .then(data => setOffboardedGroomers(data))
+    .catch(err => alert(err.message))
   },[])
 
   function handleEdit(id) {
@@ -23,8 +23,8 @@ function Groomers() {
       <Navbar />
       <GroomerNav />
       <Stack gap={3}>
-        <h2>Groomers</h2>
-        {groomers.map((groomer) => (
+        <h2>Offboarded Groomers</h2>
+        {offboardedGroomers.map((groomer) => (
           <div key={groomer.id}>
             <Button onClick={() => handleEdit(groomer.id)} size="sm" variant="danger">Edit</Button>
             <h6><strong>{groomer.name}</strong></h6>
@@ -37,4 +37,4 @@ function Groomers() {
   )
 }
 
-export default Groomers
+export default OffboardedGroomers
