@@ -6,7 +6,6 @@ import {
   Routes,
   Route,
 } from "react-router-dom"
-import AppointmentContainer from './components/AppointmentContainer'
 import Appointment from './components/Appointment'
 import EditAppointment from './components/EditAppointment'
 import CreateAppointment from './components/CreateAppointment'
@@ -17,6 +16,7 @@ import ArchivedDogs from './components/ArchivedDogs'
 import CreateDog from './components/CreateDog'
 import Groomers from './components/Groomers'
 import CreateGroomer from './components/CreateGroomer'
+import EditGroomer from './components/EditGroomer'
 import OffboardedGroomers from './components/OffboardedGroomers'
 import Services from './components/Services'
 import App from './components/App'
@@ -38,6 +38,7 @@ root.render(
         <Route path="/archived-dogs" element={<ArchivedDogs />} />
         <Route path="/groomers" element={<Groomers />} />
         <Route path="/create-groomer" element={<CreateGroomer />} />
+        <Route path="/groomers/:id" element={<EditGroomer />} />
         <Route path="/offboarded-groomers" element={<OffboardedGroomers />} />
         <Route path="/services" element={<Services />} />
       </Routes>

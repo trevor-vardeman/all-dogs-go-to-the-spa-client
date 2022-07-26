@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom"
 import Navbar from './Navbar'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
@@ -6,6 +7,8 @@ import GroomerNav from './GroomerNav'
 
 function Groomers() {
   const [groomers, setGroomers] = useState([])
+
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://localhost:9292/groomers")
@@ -15,7 +18,7 @@ function Groomers() {
   },[])
 
   function handleEdit(id) {
-    console.log(id)
+    navigate(`/groomers/${id}`)
   }
 
   return (

@@ -68,7 +68,7 @@ function EditAppointment() {
         setAppointmentTime("")
         navigate("/upcoming-appointments")
       })
-      .catch(err => alert(err))
+      .catch(err => alert(err.message))
     }
 
   return (
