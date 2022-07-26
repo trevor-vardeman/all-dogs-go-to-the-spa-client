@@ -25,7 +25,7 @@ function EditGroomer() {
         setOffboardingDate(data.offboarding_date)
       })
       .catch(err => alert(err.message))
-  },[])
+  },[id])
 
   function handleSubmit(e) {
     e.preventDefault()
@@ -40,6 +40,13 @@ function EditGroomer() {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(groomerData)
+    })
+    .then(() => {
+      setGroomer([])
+      setName("")
+      setOnboardingDate("")
+      setOffboardingDate("")
+      navigate("/groomers")
     })
     .catch(err => alert(err.message))
   }
@@ -56,14 +63,14 @@ function EditGroomer() {
                 <Form.Control required onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="Enter the employee's name..."/>
               </Form.Group>
               <Form.Group className="mb-3">
-              <p>Current onboarding date/time: {onboardingDate}</p>
-                <Form.Label>New onboarding date/time:</Form.Label>
-                <Form.Control onChange={(e) => setOnboardingDate(e.target.value)} type="datetime-local" size="sm" />
+              <p>Current onboarding date: {onboardingDate}</p>
+                <Form.Label>New onboarding date:</Form.Label>
+                <Form.Control onChange={(e) => setOnboardingDate(e.target.value)} type="date" size="sm" />
               </Form.Group>
               <Form.Group className="mb-3">
-                <p>Current offboarding date/time: {offboardingDate}</p>
-                <Form.Label>New offboarding date/time:</Form.Label>
-                <Form.Control onChange={(e) => setOffboardingDate(e.target.value)} type="datetime-local" size="sm" />
+                <p>Current offboarding date: {offboardingDate}</p>
+                <Form.Label>New offboarding date:</Form.Label>
+                <Form.Control onChange={(e) => setOffboardingDate(e.target.value)} type="date" size="sm" />
               </Form.Group>
             </Form>
             <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />

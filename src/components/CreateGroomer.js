@@ -32,7 +32,7 @@ function CreateGroomer() {
       alert("Groomer saved!")
       setName("")
       setOnboardingDate("")
-      navigate(`/groomers`)
+      navigate("/groomers")
     })
   }
 
@@ -46,8 +46,8 @@ function CreateGroomer() {
           <Form.Control required onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="Enter the employee's name..."/>
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Onboarding date/time:</Form.Label>
-          <Form.Control onChange={(e) => setOnboardingDate(e.target.value)} type="datetime-local" size="sm" />
+          <Form.Label>Onboarding Date:</Form.Label>
+          <Form.Control onChange={(e) => setOnboardingDate(e.target.value)} type="date" size="sm" />
         </Form.Group>
       </Form>
       <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />

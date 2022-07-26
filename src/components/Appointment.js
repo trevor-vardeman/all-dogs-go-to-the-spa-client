@@ -25,7 +25,7 @@ function Appointment() {
       .then(() => setAppointment(null))
       .then(() => {
         alert("Appointment cancelled!")
-        navigate("/upcoming-appointments")
+        navigate("/appointments")
       })
   }
 

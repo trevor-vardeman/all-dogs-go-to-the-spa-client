@@ -66,7 +66,7 @@ function EditAppointment() {
         setGroomerSelect("")
         setServiceSelect("")
         setAppointmentTime("")
-        navigate("/upcoming-appointments")
+        navigate("/appointments")
       })
       .catch(err => alert(err.message))
     }

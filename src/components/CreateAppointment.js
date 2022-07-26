@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from "react-router-dom"
 import Navbar from './Navbar'
 import AppointmentNav from './AppointmentNav'
 import Form from 'react-bootstrap/Form'
@@ -15,6 +16,8 @@ function CreateAppointment() {
   const [groomerSelect, setGroomerSelect] = useState("")
   const [serviceSelect, setServiceSelect] = useState("")
   const [appointmentTime, setAppointmentTime] = useState("")
+
+  let navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://localhost:9292/create-appointment")
@@ -50,6 +53,7 @@ function CreateAppointment() {
         setGroomerSelect("")
         setServiceSelect("")
         setAppointmentTime("")
+        navigate('/appointments')
       })
     }
 
