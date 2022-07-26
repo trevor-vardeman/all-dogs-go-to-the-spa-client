@@ -28,7 +28,8 @@ function CreateDog() {
       name: name,
       breed: breed,
       age: age,
-      photo_url: photo_url
+      photo_url: photo_url,
+      archived: false,
     }
 
     fetch("http://localhost:9292/create-dog", {
