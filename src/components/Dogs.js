@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button'
 function Dogs() {
   const [dogs, setDogs] = useState([])
 
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://localhost:9292/dogs")
@@ -16,10 +16,6 @@ function Dogs() {
       .then(data => setDogs(data))
       .catch(err => alert(err.message))
   },[])
-
-  function handleclick() {
-    navigate(`/create-dog`)
-  }
 
   function handleArchive(dog) {
     const dogData = {

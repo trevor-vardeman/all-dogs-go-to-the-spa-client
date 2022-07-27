@@ -17,7 +17,7 @@ function CreateAppointment() {
   const [serviceSelect, setServiceSelect] = useState("")
   const [appointmentTime, setAppointmentTime] = useState("")
 
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://localhost:9292/create-appointment")

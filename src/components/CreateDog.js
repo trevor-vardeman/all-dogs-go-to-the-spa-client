@@ -12,7 +12,7 @@ function CreateDog() {
   const [age, setAge] = useState("")
   const [photo_url, setPhoto_url] = useState("")
   
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch("https://dog.ceo/api/breeds/image/random")

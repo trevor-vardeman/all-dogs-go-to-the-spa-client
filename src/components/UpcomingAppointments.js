@@ -7,7 +7,7 @@ import AppointmentNav from './AppointmentNav'
 function UpcomingAppointments() {
   const [upcomingAppointments, setUpcomingAppointments] = useState([])
 
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://localhost:9292/appointments")

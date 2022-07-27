@@ -10,7 +10,7 @@ function CreateGroomer() {
   const [name, setName] = useState("")
   const [onboardingDate, setOnboardingDate] = useState("")
 
-  let navigate = useNavigate()
+  const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault()
