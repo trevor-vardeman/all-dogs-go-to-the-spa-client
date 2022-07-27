@@ -31,7 +31,7 @@ function ArchivedDogs() {
     })
       .then(() => setArchivedDogs([...archivedDogs.filter(dogs => dogs.id !== dog.id)]))
       .then(() => alert(`${dog.name} unarchived!`))
-      .catch(err => alert(err))
+      .catch(err => alert(err.message))
   } 
 
   return (

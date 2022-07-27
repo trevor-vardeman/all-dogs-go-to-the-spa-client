@@ -19,6 +19,8 @@ import CreateGroomer from './components/CreateGroomer'
 import EditGroomer from './components/EditGroomer'
 import OffboardedGroomers from './components/OffboardedGroomers'
 import Services from './components/Services'
+import CreateService from './components/CreateService'
+import ArchivedServices from './components/ArchivedServices'
 import App from './components/App'
 
 
@@ -41,6 +43,8 @@ root.render(
         <Route path="/groomers/:id" element={<EditGroomer />} />
         <Route path="/offboarded-groomers" element={<OffboardedGroomers />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/create-service" element={<CreateService />} />
+        <Route path="/archived-services" element={<ArchivedServices />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

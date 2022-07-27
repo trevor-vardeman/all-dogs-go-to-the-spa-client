@@ -1,36 +1,29 @@
 import { useState, useEffect } from 'react'
 import Navbar from './Navbar'
+import ServiceNav from './ServiceNav'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
-import ServiceNav from './ServiceNav'
 
-function Services() {
-  const [services, setServices] = useState([])
+function ArchivedServices() {
+  const [archivedServices, setArchivedServices] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:9292/services")
+    fetch("http://localhost:9292/archived-services")
       .then(r => r.json())
-      .then(data => setServices(data))
+      .then(data => setArchivedServices(data))
       .catch(err => alert(err.message))
   },[])
 
-  function handleArchive(service) {
-    const serviceData = {
-      name: service.name,
-      description: service.description,
-      cost: service.cost,
-      service_length: service.service_length,
-      archived: true
-    }
+  function handleUnarchive(service) {
     fetch(`http://localhost:9292/services/${service.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(serviceData)
+      body: JSON.stringify({archived: false})
     })
-      .then(() => setServices([...services.filter(services => services.id !== service.id)]))
-      .then(() => alert("Service archived!"))
+      .then(() => setArchivedServices([...archivedServices.filter(services => services.id !== service.id)]))
+      .then(() => alert(`${service.name} unarchived!`))
       .catch(err => alert(err.message))
   }
 
@@ -39,10 +32,10 @@ function Services() {
       <Navbar />
       <ServiceNav />
       <Stack gap={3}>
-        <h2>Current Services</h2>
-        {services.map((service) => (
+        <h2>Archived Services</h2>
+        {archivedServices.map((service) => (
           <div key={service.id}>
-            <Button onClick={() => handleArchive(service)} size="sm" variant="danger">Archive Service</Button>
+            <Button onClick={() => handleUnarchive(service)} size="sm" variant="danger">Unarchive Service</Button>
             <h6><strong>{service.name}</strong></h6>
             <h6>{service.description}</h6>
             <h6>Cost: ${service.cost}</h6>
@@ -50,8 +43,8 @@ function Services() {
           </div>
         ))}
       </Stack>
-    </Stack>
-  )
+    </Stack>  
+    )
 }
 
-export default Services
+export default ArchivedServices

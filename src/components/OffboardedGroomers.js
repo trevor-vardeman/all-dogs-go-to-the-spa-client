@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import Navbar from './Navbar'
 import GroomerNav from './GroomerNav'
 import Stack from 'react-bootstrap/Stack'
-import Button from 'react-bootstrap/Button'
 
 function OffboardedGroomers() {
   const [offboardedGroomers, setOffboardedGroomers] = useState([])

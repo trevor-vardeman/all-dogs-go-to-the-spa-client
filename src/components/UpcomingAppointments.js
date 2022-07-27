@@ -28,7 +28,7 @@ function UpcomingAppointments() {
         <h2>Upcoming Appointments</h2>
         {upcomingAppointments.map((appt) => (
           <div key={appt.id} onClick={() => handleclick(appt.id)}>
-            <img style={{maxWidth: "300px", maxHeight: "300px"}} src={appt.dog.photo_url} alt={`${appt.dog.name} the ${appt.dog.breed}`}/>
+            <img style={{maxWidth: "200px", maxHeight: "200px"}} src={appt.dog.photo_url} alt={`${appt.dog.name} the ${appt.dog.breed}`}/>
             <h6>Appointment date/time: {appt.appt_datetime}</h6>
             <h6>Dog: {appt.dog.name}</h6>
             <h6>{appt.dog.name}'s Age: {appt.dog.age}</h6>
