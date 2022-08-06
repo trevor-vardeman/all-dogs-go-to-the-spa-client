@@ -3,7 +3,6 @@ import { useNavigate } from "react-router-dom"
 import Navbar from './Navbar'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
-import GroomerNav from './GroomerNav'
 
 function Groomers() {
   const [groomers, setGroomers] = useState([])
@@ -24,7 +23,6 @@ function Groomers() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <GroomerNav />
       <Stack gap={3}>
         <h2>Current Groomers</h2>
         {groomers.map((groomer) => (

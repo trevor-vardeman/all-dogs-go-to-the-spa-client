@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import Navbar from './Navbar'
-import GroomerNav from './GroomerNav'
 import Form from 'react-bootstrap/Form'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
@@ -39,7 +38,6 @@ function CreateGroomer() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <GroomerNav />
       <Form>
         <Form.Group className="mb-3">
           <Form.Label>Name</Form.Label>

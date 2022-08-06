@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Navbar from './Navbar'
-import ServiceNav from './ServiceNav'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 
@@ -30,7 +29,6 @@ function ArchivedServices() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <ServiceNav />
       <Stack gap={3}>
         <h2>Archived Services</h2>
         {archivedServices.map((service) => (

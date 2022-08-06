@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
 import Stack from 'react-bootstrap/Stack'
 import Navbar from './Navbar'
-import AppointmentNav from './AppointmentNav'
 
 function UpcomingAppointments() {
   const [upcomingAppointments, setUpcomingAppointments] = useState([])
@@ -23,7 +22,6 @@ function UpcomingAppointments() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <AppointmentNav />
       <Stack gap={3}>
         <h2>Upcoming Appointments</h2>
         {upcomingAppointments.map((appt) => (

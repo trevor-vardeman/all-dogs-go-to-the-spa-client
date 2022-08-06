@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom"
 import Navbar from './Navbar'
-import AppointmentNav from './AppointmentNav'
 import Form from 'react-bootstrap/Form'
 import DropdownButton from 'react-bootstrap/DropdownButton'
 import Dropdown from 'react-bootstrap/Dropdown'
@@ -60,7 +59,6 @@ function CreateAppointment() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <AppointmentNav />
       <h2>Create an Appointment</h2>
       <p>If you don't see a dog, groomer, or service, go to their pages above to create a new profile.</p>
       <Stack gap={3}>

@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import Navbar from './Navbar'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
-import ServiceNav from './ServiceNav'
 
 function Services() {
   const [services, setServices] = useState([])
@@ -37,7 +36,6 @@ function Services() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <ServiceNav />
       <Stack gap={3}>
         <h2>Current Services</h2>
         {services.map((service) => (

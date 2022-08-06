@@ -1,7 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useNavigate } from "react-router-dom"
 import Navbar from './Navbar'
-import ServiceNav from './ServiceNav'
 import Stack from 'react-bootstrap/Stack'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
@@ -45,7 +44,6 @@ function CreateService() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <ServiceNav />
       <Stack gap={3}>
         <h2>Create a Service</h2>
         <Form>

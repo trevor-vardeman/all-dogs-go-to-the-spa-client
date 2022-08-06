@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Navbar from './Navbar'
-import GroomerNav from './GroomerNav'
 import Stack from 'react-bootstrap/Stack'
 
 function OffboardedGroomers() {
@@ -16,7 +15,6 @@ function OffboardedGroomers() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <GroomerNav />
       <Stack gap={3}>
         <h2>Offboarded Groomers</h2>
         {offboardedGroomers.map((groomer) => (

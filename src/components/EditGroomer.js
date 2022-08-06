@@ -4,7 +4,6 @@ import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
 import Navbar from './Navbar'
-import GroomerNav from './GroomerNav'
 
 function EditGroomer() {
   const [groomer, setGroomer] = useState([])
@@ -54,7 +53,6 @@ function EditGroomer() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <GroomerNav />
         {groomer ?
           <div key={groomer.id}>
             <Form>

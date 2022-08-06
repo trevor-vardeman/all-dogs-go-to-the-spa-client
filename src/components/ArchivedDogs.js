@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import Navbar from './Navbar'
-import DogNav from './DogNav'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 
@@ -37,7 +36,6 @@ function ArchivedDogs() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <DogNav />
       <Stack gap={3}>
         <h2>Archived Dogs</h2>
         {archivedDogs.map((dog) => (

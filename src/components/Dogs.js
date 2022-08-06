@@ -1,14 +1,10 @@
 import { useState, useEffect } from 'react'
-import { useNavigate } from "react-router-dom"
 import Navbar from './Navbar'
-import DogNav from './DogNav'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 
 function Dogs() {
   const [dogs, setDogs] = useState([])
-
-  const navigate = useNavigate()
 
   useEffect(() => {
     fetch("http://localhost:9292/dogs")
@@ -40,7 +36,6 @@ function Dogs() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <DogNav />
       <Stack gap={3}>
         <h2>Active Dogs</h2>
         {dogs.map((dog) => (

@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom"
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 import Navbar from './Navbar'
-import AppointmentNav from './AppointmentNav'
 
 function Appointment() {
   const [appointment, setAppointment] = useState(null)
@@ -36,7 +35,6 @@ function Appointment() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <AppointmentNav />
         {appointment ?
           <div key={appointment.id}>
             <Button onClick={() => handleEdit(appointment.id)} size="sm" variant="dark">Edit Appointment</Button>
