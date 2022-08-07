@@ -30,14 +30,16 @@ function ArchivedServices() {
     <Stack gap={3}>
       <Navbar />
       <Stack gap={3}>
-        <h2>Archived Services</h2>
+        <h2 class="center">Archived Services</h2>
         {archivedServices.map((service) => (
-          <div key={service.id}>
-            <Button onClick={() => handleUnarchive(service)} size="sm" variant="danger">Unarchive Service</Button>
-            <h6><strong>{service.name}</strong></h6>
-            <h6>{service.description}</h6>
-            <h6>Cost: ${service.cost}</h6>
-            <h6>Service Length: {service.service_length} minutes</h6>
+          <div key={service.id} class="center">
+            <li>
+              <h6><strong>{service.name}</strong></h6>
+              <p>{service.description}</p>
+              <h6>Cost: ${service.cost}</h6>
+              <h6>Service Length: {service.service_length} minutes</h6>
+              <Button onClick={() => handleUnarchive(service)} size="sm" variant="danger">Unarchive Service</Button>
+            </li>
           </div>
         ))}
       </Stack>

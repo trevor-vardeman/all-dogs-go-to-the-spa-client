@@ -16,18 +16,20 @@ function PastAppointments() {
     <Stack gap={3}>
       <Navbar />
       <Stack gap={3}>
-        <h2>Past Appointments</h2>
+        <h2 class="center">Past Appointments</h2>
         {pastAppointments.map((appt) => (
-          <div key={appt.id}>
-            <img style={{maxWidth: "200px", maxHeight: "200px"}} src={appt.dog.photo_url} alt={`${appt.dog.name} the ${appt.dog.breed}`}/>
-            <h6>Appointment date/time: {appt.appt_datetime}</h6>
-            <h6>Dog: {appt.dog.name}</h6>
-            <h6>{appt.dog.name}'s Age: {appt.dog.age}</h6>
-            <h6>{appt.dog.name}'s Breed: {appt.dog.breed}</h6>
-            <h6>Groomer: {appt.groomer.name}</h6>
-            <h6>Service: {appt.service.name}</h6>
-            <h6>Length: {appt.service.service_length} minutes</h6>
-            <h6>Cost: ${appt.service.cost}</h6>
+          <div key={appt.id} class="center">
+            <li>
+              <img src={appt.dog.photo_url} alt={`${appt.dog.name} the ${appt.dog.breed}`}/>
+              <h6><strong>Appointment date/time:</strong> {appt.appt_datetime}</h6>
+              <h6><strong>Dog:</strong> {appt.dog.name}</h6>
+              <h6><strong>{appt.dog.name}'s Age:</strong> {appt.dog.age}</h6>
+              <h6><strong>{appt.dog.name}'s Breed:</strong> {appt.dog.breed}</h6>
+              <h6><strong>Groomer:</strong> {appt.groomer.name}</h6>
+              <h6><strong>Service:</strong> {appt.service.name}</h6>
+              <h6><strong>Length:</strong> {appt.service.service_length} minutes</h6>
+              <h6><strong>Cost:</strong> ${appt.service.cost}</h6>
+            </li>
           </div>
           ))}
       </Stack>

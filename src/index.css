@@ -7,12 +7,32 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   width: 100%;
-  border: 5px solid blue;
-  overflow: hidden;
-  box-sizing: border-box;
+  background-color: lightskyblue;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+img {
+  max-width: 200px;
+  max-height: 200px;
+  border-color: black;
+  border-style: solid;
+}
+
+.center {
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  align-items: center;
+}
+
+li {
+  border: solid;
+  width: fit-content;
+  padding: 5px;
+  list-style: none;
+  background-color: rgb(252, 205, 212);
 }

@@ -37,14 +37,18 @@ function ArchivedDogs() {
     <Stack gap={3}>
       <Navbar />
       <Stack gap={3}>
-        <h2>Archived Dogs</h2>
+        <h2 class="center">Archived Dogs</h2>
         {archivedDogs.map((dog) => (
-          <div key={dog.id}>
-            <Button onClick={() => handleUnarchive(dog)} size="sm" variant="danger">Unarchive Dog</Button>
-            <h6><strong>{dog.name}</strong></h6>
-            <h6>Breed: {dog.breed}</h6>
-            <h6>Age: {dog.age}</h6>
-            <img style={{maxWidth: "200px", maxHeight: "200px"}} src={dog.photo_url} alt={`${dog.name} the ${dog.breed}`}/>
+          <div key={dog.id} class="center">
+            <ul>
+              <li>
+                <img src={dog.photo_url} alt={`${dog.name} the ${dog.breed}`}/>
+                <h6><strong>{dog.name}</strong></h6>
+                <h6>Breed: {dog.breed}</h6>
+                <h6>Age: {dog.age}</h6>
+                <Button onClick={() => handleUnarchive(dog)} size="sm" variant="danger">Unarchive Dog</Button>
+              </li>
+            </ul>
           </div>
         ))}
       </Stack>

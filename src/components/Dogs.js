@@ -37,14 +37,18 @@ function Dogs() {
     <Stack gap={3}>
       <Navbar />
       <Stack gap={3}>
-        <h2>Active Dogs</h2>
+        <h2 class="center">Active Dogs</h2>
         {dogs.map((dog) => (
-          <div key={dog.id}>
-            <Button onClick={() => handleArchive(dog)} size="sm" variant="danger">Archive Dog</Button>
-            <h6><strong>{dog.name}</strong></h6>
-            <h6>Breed: {dog.breed}</h6>
-            <h6>Age: {dog.age}</h6>
-            <img style={{maxWidth: "200px", maxHeight: "200px"}} src={dog.photo_url} alt={`${dog.name} the ${dog.breed}`}/>
+          <div key={dog.id} class="center">
+            <ul>
+              <li>
+                <img src={dog.photo_url} alt={`${dog.name} the ${dog.breed}`}/>
+                <h6><strong>{dog.name}</strong></h6>
+                <h6>Breed: {dog.breed}</h6>
+                <h6>Age: {dog.age}</h6>
+                <Button onClick={() => handleArchive(dog)} size="sm" variant="danger">Archive Dog</Button>
+              </li>
+            </ul>
           </div>
         ))}
       </Stack>

@@ -36,19 +36,22 @@ function Appointment() {
     <Stack gap={3}>
       <Navbar />
         {appointment ?
-          <div key={appointment.id}>
-            <Button onClick={() => handleEdit(appointment.id)} size="sm" variant="dark">Edit Appointment</Button>
-            <Button onClick={() => handleDelete(appointment.id)} size="sm" variant="danger">Cancel Appointment</Button>
-            <br></br>
-            <img style={{maxWidth: "300px", maxHeight: "300px"}} src={appointment.dog.photo_url} alt={`${appointment.dog.name} the ${appointment.dog.breed}`}/>
-            <h6>Appointment date/time: {appointment.appt_datetime}</h6>
-            <h6>Dog: {appointment.dog.name}</h6>
-            <h6>{appointment.dog.name}'s Age: {appointment.dog.age}</h6>
-            <h6>{appointment.dog.name}'s Breed: {appointment.dog.breed}</h6>
-            <h6>Groomer: {appointment.groomer.name}</h6>
-            <h6>Service: {appointment.service.name}</h6>
-            <h6>Length: {appointment.service.service_length} minutes</h6>
-            <h6>Cost: ${appointment.service.cost}</h6>
+          <div key={appointment.id} class="center">
+            <h2>Appointment #{appointment.id}</h2>
+            <li>
+              <img src={appointment.dog.photo_url} alt={`${appointment.dog.name} the ${appointment.dog.breed}`}/>
+              <h6><strong>Appointment date/time:</strong> {appointment.appt_datetime}</h6>
+              <h6><strong>Dog:</strong> {appointment.dog.name}</h6>
+              <h6><strong>{appointment.dog.name}'s Age:</strong> {appointment.dog.age}</h6>
+              <h6><strong>{appointment.dog.name}'s Breed:</strong> {appointment.dog.breed}</h6>
+              <h6><strong>Groomer:</strong> {appointment.groomer.name}</h6>
+              <h6><strong>Service:</strong> {appointment.service.name}</h6>
+              <h6><strong>Length:</strong> {appointment.service.service_length} minutes</h6>
+              <h6><strong>Cost:</strong> ${appointment.service.cost}</h6>
+              <Button style={{marginBottom: "10px"}} onClick={() => handleEdit(appointment.id)} size="sm" variant="dark">Edit Appointment</Button>
+              <br></br>
+              <Button onClick={() => handleDelete(appointment.id)} size="sm" variant="danger">Cancel Appointment</Button>
+            </li>
           </div>
         : null}
     </Stack>

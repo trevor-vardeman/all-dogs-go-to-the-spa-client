@@ -37,14 +37,16 @@ function Services() {
     <Stack gap={3}>
       <Navbar />
       <Stack gap={3}>
-        <h2>Current Services</h2>
+        <h2 class="center">Current Services</h2>
         {services.map((service) => (
-          <div key={service.id}>
-            <Button onClick={() => handleArchive(service)} size="sm" variant="danger">Archive Service</Button>
-            <h6><strong>{service.name}</strong></h6>
-            <h6>{service.description}</h6>
-            <h6>Cost: ${service.cost}</h6>
-            <h6>Service Length: {service.service_length} minutes</h6>
+          <div key={service.id} class="center">
+            <li>
+              <h6><strong>{service.name}</strong></h6>
+              <p>{service.description}</p>
+              <h6>Cost: ${service.cost}</h6>
+              <h6>Service Length: {service.service_length} minutes</h6>
+              <Button onClick={() => handleArchive(service)} size="sm" variant="danger">Archive Service</Button>
+            </li>
           </div>
         ))}
       </Stack>

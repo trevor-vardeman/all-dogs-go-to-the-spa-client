@@ -16,12 +16,14 @@ function OffboardedGroomers() {
     <Stack gap={3}>
       <Navbar />
       <Stack gap={3}>
-        <h2>Offboarded Groomers</h2>
+        <h2 class="center">Offboarded Groomers</h2>
         {offboardedGroomers.map((groomer) => (
-          <div key={groomer.id}>
-            <h6><strong>{groomer.name}</strong></h6>
-            <h6>Onboarding date: {groomer.onboarding_date}</h6>
-            <h6>Offboarding date: {groomer.offboarding_date}</h6>
+          <div key={groomer.id} class="center">
+            <li>
+              <h3><strong>{groomer.name}</strong></h3>
+              <h6><strong>Onboarding date:</strong> {groomer.onboarding_date}</h6>
+              <h6><strong>Offboarding date:</strong> {groomer.offboarding_date}</h6>
+            </li>
           </div>
         ))}
       </Stack>

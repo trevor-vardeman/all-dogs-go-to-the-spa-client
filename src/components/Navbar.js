@@ -9,7 +9,7 @@ function NavBar() {
     <Stack gap={3} direction="horizontal" style={{justifyContent: "center"}}>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/">App Name</Navbar.Brand>
+          <Navbar.Brand href="/">Appointment Keeper</Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse className="me-auto">
             <Nav>
