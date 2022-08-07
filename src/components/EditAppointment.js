@@ -73,7 +73,8 @@ function EditAppointment() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <h2>Edit Appointment</h2>
+      <h2 class="center">Edit Appointment</h2>
+      <div class="center">
         <Stack gap={3}>
           <DropdownButton
             title={dogSelect === "" ? "Select a Dog" : dogSelect}
@@ -102,12 +103,13 @@ function EditAppointment() {
           <p>Current appointment date and time: {appointmentTime}</p>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Appointment time</Form.Label>
-              <Form.Control onChange={(e) => setAppointmentTime(e.target.value)} type="datetime-local" size="sm" placeholder="Select a time for the appointment" />
+              <Form.Label>New appointment date/time:</Form.Label>
+              <Form.Control onChange={(e) => setAppointmentTime(e.target.value)} type="datetime-local" size="sm" />
             </Form.Group>
             <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />
           </Form>
-          </Stack>
+        </Stack>
+      </div>
     </Stack>
   )
 }

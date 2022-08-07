@@ -57,43 +57,45 @@ function CreateAppointment() {
     }
 
   return (
-    <Stack class="center" gap={3}>
+    <Stack gap={3}>
       <Navbar />
-      <h2>Create an Appointment</h2>
-      <p>If you don't see a dog, groomer, or service, go to their pages above to create a new profile.</p>
-      <Stack gap={3} class="center">
-        <DropdownButton
-          title={dogSelect === "" ? "Select a Dog" : dogSelect}
-          id="dropdown-menu-align-right"
-        >
-          {dogs.map((dog) => (
-            <Dropdown.Item onClick={(e) => setDogSelect(e.target.innerText)} key={dog.id} eventKey={dog.name}>{dog.name}</Dropdown.Item>
-          ))}
-        </DropdownButton>
-        <DropdownButton
-          title={groomerSelect === "" ? "Select a Groomer" : groomerSelect}
-          id="dropdown-menu-align-right"
-        >
-          {groomers.map((groomer) => (
-            <Dropdown.Item onClick={(e) => setGroomerSelect(e.target.innerText)} key={groomer.id} eventKey={groomer.name}>{groomer.name}</Dropdown.Item>
-          ))}
-        </DropdownButton>
-        <DropdownButton
-          title={serviceSelect === "" ? "Select a Service" : serviceSelect}
-          id="dropdown-menu-align-right"
-        >
-          {services.map((service) => (
-            <Dropdown.Item onClick={(e) => setServiceSelect(e.target.innerText)} key={service.id} eventKey={service.name}>{service.name}</Dropdown.Item>
-          ))}
-        </DropdownButton>
-        <Form>
-          <Form.Group className="mb-3">
-            <Form.Label>Appointment date/time:</Form.Label>
-            <Form.Control onChange={(e) => setAppointmentTime(e.target.value)} type="datetime-local" size="sm" style={{width: "auto"}}/>
-          </Form.Group>
-          <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />
-        </Form>
-      </Stack>
+      <h2 class="center">Create an Appointment</h2>
+      <div class="center">
+        <p>If you don't see a dog, groomer, or service, go to their pages above to create a new profile.</p>
+        <Stack gap={3}>
+          <DropdownButton
+            title={dogSelect === "" ? "Select a Dog" : dogSelect}
+            id="dropdown-menu-align-right"
+          >
+            {dogs.map((dog) => (
+              <Dropdown.Item onClick={(e) => setDogSelect(e.target.innerText)} key={dog.id} eventKey={dog.name}>{dog.name}</Dropdown.Item>
+            ))}
+          </DropdownButton>
+          <DropdownButton
+            title={groomerSelect === "" ? "Select a Groomer" : groomerSelect}
+            id="dropdown-menu-align-right"
+          >
+            {groomers.map((groomer) => (
+              <Dropdown.Item onClick={(e) => setGroomerSelect(e.target.innerText)} key={groomer.id} eventKey={groomer.name}>{groomer.name}</Dropdown.Item>
+            ))}
+          </DropdownButton>
+          <DropdownButton
+            title={serviceSelect === "" ? "Select a Service" : serviceSelect}
+            id="dropdown-menu-align-right"
+          >
+            {services.map((service) => (
+              <Dropdown.Item onClick={(e) => setServiceSelect(e.target.innerText)} key={service.id} eventKey={service.name}>{service.name}</Dropdown.Item>
+            ))}
+          </DropdownButton>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>Appointment date/time:</Form.Label>
+              <Form.Control onChange={(e) => setAppointmentTime(e.target.value)} type="datetime-local" size="sm" />
+            </Form.Group>
+            <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />
+          </Form>
+        </Stack>
+      </div>
     </Stack>
   )
 }

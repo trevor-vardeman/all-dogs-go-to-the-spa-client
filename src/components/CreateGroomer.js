@@ -38,17 +38,20 @@ function CreateGroomer() {
   return (
     <Stack gap={3}>
       <Navbar />
-      <Form>
-        <Form.Group className="mb-3">
-          <Form.Label>Name</Form.Label>
-          <Form.Control required onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="Enter the employee's name..."/>
-        </Form.Group>
-        <Form.Group className="mb-3">
-          <Form.Label>Onboarding Date:</Form.Label>
-          <Form.Control onChange={(e) => setOnboardingDate(e.target.value)} type="date" size="sm" />
-        </Form.Group>
-      </Form>
-      <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />
+      <h2 class="center">Create a Groomer Profile</h2>
+      <div class="center">
+        <Form>
+          <Form.Group className="mb-3">
+            <Form.Label>Name</Form.Label>
+            <Form.Control required onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="Enter their name..."/>
+          </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Onboarding Date:</Form.Label>
+            <Form.Control onChange={(e) => setOnboardingDate(e.target.value)} type="date" size="sm" />
+          </Form.Group>
+        </Form>
+        <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />
+      </div>
     </Stack>
   )
 }
