@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from "react-router-dom"
-import Navbar from './Navbar'
 import Stack from 'react-bootstrap/Stack'
 import Form from 'react-bootstrap/Form'
 import DropdownButton from 'react-bootstrap/DropdownButton'
@@ -71,10 +70,9 @@ function EditAppointment() {
     }
 
   return (
-    <Stack gap={3}>
-      <Navbar />
-      <h2 class="center">Edit Appointment</h2>
-      <div class="center">
+    <Stack gap={3} className="center">
+      <h2>Edit Appointment</h2>
+      <div>
         <Stack gap={3}>
           <DropdownButton
             title={dogSelect === "" ? "Select a Dog" : dogSelect}

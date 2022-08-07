@@ -1,13 +1,46 @@
+import { Routes, Route } from "react-router-dom"
 import '../App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import Container from './Container'
+import Appointment from './Appointment'
+import EditAppointment from './EditAppointment'
+import CreateAppointment from './CreateAppointment'
+import UpcomingAppointments from './UpcomingAppointments'
+import PastAppointments from './PastAppointments'
+import Dogs from './Dogs'
+import ArchivedDogs from './ArchivedDogs'
+import CreateDog from './CreateDog'
+import Groomers from './Groomers'
+import CreateGroomer from './CreateGroomer'
+import EditGroomer from './EditGroomer'
+import OffboardedGroomers from './OffboardedGroomers'
+import Services from './Services'
+import CreateService from './CreateService'
+import ArchivedServices from './ArchivedServices'
+import Home from './Home'
 import Navbar from './Navbar'
 
 function App() {
   return (
-    <div class="center">
+    <div className="background">
       <Navbar />
-      <Container />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/create-appointment" element={<CreateAppointment />} />
+        <Route path="/appointments" element={<UpcomingAppointments />} />
+        <Route path="/appointments/:id" element={<Appointment />} />
+        <Route path="/appointments/edit/:id" element={<EditAppointment />} />
+        <Route path="/past-appointments" element={<PastAppointments />} />
+        <Route path="/dogs" element={<Dogs />} />
+        <Route path="/create-dog" element={<CreateDog />} />
+        <Route path="/archived-dogs" element={<ArchivedDogs />} />
+        <Route path="/groomers" element={<Groomers />} />
+        <Route path="/create-groomer" element={<CreateGroomer />} />
+        <Route path="/groomers/edit/:id" element={<EditGroomer />} />
+        <Route path="/offboarded-groomers" element={<OffboardedGroomers />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/create-service" element={<CreateService />} />
+        <Route path="/archived-services" element={<ArchivedServices />} />
+      </Routes>
     </div>
   )
 }

@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Navbar from './Navbar'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 
@@ -34,24 +33,24 @@ function ArchivedDogs() {
   } 
 
   return (
-    <Stack gap={3}>
-      <Navbar />
-      <Stack gap={3}>
-        <h2 class="center">Archived Dogs</h2>
-        {archivedDogs.map((dog) => (
-          <div key={dog.id} class="center">
-            <ul>
-              <li>
-                <img src={dog.photo_url} alt={`${dog.name} the ${dog.breed}`}/>
-                <h6><strong>{dog.name}</strong></h6>
-                <h6>Breed: {dog.breed}</h6>
-                <h6>Age: {dog.age}</h6>
-                <Button onClick={() => handleUnarchive(dog)} size="sm" variant="danger">Unarchive Dog</Button>
-              </li>
-            </ul>
-          </div>
-        ))}
-      </Stack>
+    <Stack gap={3} className="center">
+      <div>
+        <h2>Archived Dogs</h2>
+        <p>Archived dogs cannot be selected when creating a new appointment.</p>
+      </div>
+      {archivedDogs.map((dog) => (
+        <div key={dog.id}>
+          <ul>
+            <li>
+              <img src={dog.photo_url} alt={`${dog.name} the ${dog.breed}`}/>
+              <h6><strong>{dog.name}</strong></h6>
+              <h6>Breed: {dog.breed}</h6>
+              <h6>Age: {dog.age}</h6>
+              <Button onClick={() => handleUnarchive(dog)} size="sm" variant="danger">Unarchive Dog</Button>
+            </li>
+          </ul>
+        </div>
+      ))}
     </Stack>
   )
 }

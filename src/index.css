@@ -7,7 +7,6 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   height: 100%;
   width: 100%;
-  background-color: lightskyblue;
 }
 
 code {
@@ -35,4 +34,17 @@ li {
   padding: 5px;
   list-style: none;
   background-color: rgb(252, 205, 212);
+}
+
+.font-link {
+  font-family: 'Pacifico', cursive;
+  font-weight: bold;
+  color: rgb(252, 205, 212);
+}
+
+.background {
+  background-color: lightskyblue;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }

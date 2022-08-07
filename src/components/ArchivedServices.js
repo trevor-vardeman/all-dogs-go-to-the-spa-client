@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react'
-import Navbar from './Navbar'
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 
@@ -27,22 +26,22 @@ function ArchivedServices() {
   }
 
   return (
-    <Stack gap={3}>
-      <Navbar />
-      <Stack gap={3}>
-        <h2 class="center">Archived Services</h2>
-        {archivedServices.map((service) => (
-          <div key={service.id} class="center">
-            <li>
-              <h6><strong>{service.name}</strong></h6>
-              <p>{service.description}</p>
-              <h6>Cost: ${service.cost}</h6>
-              <h6>Service Length: {service.service_length} minutes</h6>
-              <Button onClick={() => handleUnarchive(service)} size="sm" variant="danger">Unarchive Service</Button>
-            </li>
-          </div>
-        ))}
-      </Stack>
+    <Stack gap={3} className="center">
+      <div>
+        <h2>Archived Services</h2>
+        <p>Archived services cannot be selected when creating a new appointment.</p>
+      </div>
+      {archivedServices.map((service) => (
+        <div key={service.id}>
+          <li>
+            <h6><strong>{service.name}</strong></h6>
+            <p>{service.description}</p>
+            <h6>Cost: ${service.cost}</h6>
+            <h6>Service Length: {service.service_length} minutes</h6>
+            <Button onClick={() => handleUnarchive(service)} size="sm" variant="danger">Unarchive Service</Button>
+          </li>
+        </div>
+      ))}
     </Stack>  
     )
 }

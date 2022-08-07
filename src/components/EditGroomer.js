@@ -3,7 +3,6 @@ import { useNavigate, useParams } from "react-router-dom"
 import Stack from 'react-bootstrap/Stack'
 import Button from 'react-bootstrap/Button'
 import Form from 'react-bootstrap/Form'
-import Navbar from './Navbar'
 
 function EditGroomer() {
   const [groomer, setGroomer] = useState([])
@@ -51,29 +50,29 @@ function EditGroomer() {
   }
 
   return (
-    <Stack gap={3}>
-      <Navbar />
-        {groomer ?
-          <div key={groomer.id}>
-            <Form>
-              <Form.Group className="mb-3">
-                <Form.Label>Name</Form.Label>
-                <Form.Control required onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="Enter the employee's name..."/>
-              </Form.Group>
-              <Form.Group className="mb-3">
-              <p>Current onboarding date: {onboardingDate}</p>
-                <Form.Label>New onboarding date:</Form.Label>
-                <Form.Control onChange={(e) => setOnboardingDate(e.target.value)} type="date" size="sm" />
-              </Form.Group>
-              <Form.Group className="mb-3">
-                <p>Current offboarding date: {offboardingDate}</p>
-                <Form.Label>New offboarding date:</Form.Label>
-                <Form.Control onChange={(e) => setOffboardingDate(e.target.value)} type="date" size="sm" />
-              </Form.Group>
-            </Form>
-            <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />
-          </div>
-        : null}
+    <Stack gap={3} className="center">
+      <h2>Edit Groomer</h2>
+      {groomer ?
+        <div key={groomer.id}>
+          <Form>
+            <Form.Group className="mb-3">
+              <Form.Label>Name</Form.Label>
+              <Form.Control required onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="Enter the employee's name..."/>
+            </Form.Group>
+            <Form.Group className="mb-3">
+            <p>Current onboarding date: {onboardingDate}</p>
+              <Form.Label>New onboarding date:</Form.Label>
+              <Form.Control onChange={(e) => setOnboardingDate(e.target.value)} type="date" size="sm" />
+            </Form.Group>
+            <Form.Group className="mb-3">
+              <p>Current offboarding date: {offboardingDate}</p>
+              <Form.Label>New offboarding date:</Form.Label>
+              <Form.Control onChange={(e) => setOffboardingDate(e.target.value)} type="date" size="sm" />
+            </Form.Group>
+          </Form>
+          <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />
+        </div>
+      : null}
     </Stack>
   )
 }
