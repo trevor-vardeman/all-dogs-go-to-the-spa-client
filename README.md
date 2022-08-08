@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# All Dogs Go to the Spa - Client
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## GIF Preview
 
-In the project directory, you can run:
+![gif preview](https://i.imgur.com/f196PZk.gif)
 
-### `npm start`
+## Introduction
+This app is to be used by a dog spa company to create appointments, edit appointments, cancel appointments, look at past appointment history, or look at upcoming appointments.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In order to create an appointment, you  must utilize an **active** dog profile, **active** groomer profile, and a **current service** being offered. You can create these dog profiles, groomer profiles, or services as needed. For each dog/groomer/service, there are both active profiles/services and archived profiles/services. These are purposefully not able to be deleted so as to retain past appointment history even when the dog/groomer/service is no longer active or utilized. You can unarchive these profiles as needed as well.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation Instructions
+1. Navigate to the project's [GitHub page](https://github.com/trevor-vardeman/all-dogs-go-to-the-spa-client) and choose your favorite method of downloading the project. I use SSH, so I would click "Code", ensure "SSH" is chosen, and copy the link.
+2. Then open your terminal and navigate to a directory in which you'd like to install the app. 
+3. Type `git clone` followed by the link you copied from GitHub, and the app should be installed.
+4. cd into the project's folder and type the following command in your terminal to install all dependences: `npm install`.
+5. Change directory back up to the root folder and execute the `npm start` command to run the application!
+6. Utilize and enjoy the app. :)
 
-### `npm test`
+## Note
+This is the client side of this project. There is another server repo for this project that also needs to be downloaded and installed. You can find it [here](https://github.com/trevor-vardeman/all-dogs-go-to-the-spa-server).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Credits
+Thanks to the [Dog API](https://dog.ceo/dog-api/) from Dog CEO for the random dog pics!
