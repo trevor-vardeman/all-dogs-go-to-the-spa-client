@@ -66,6 +66,7 @@ function CreateAppointment() {
           <DropdownButton
             title={dogSelect === "" ? "Select a Dog" : dogSelect}
             id="dropdown-menu-align-right"
+            variant="dark"
           >
             {dogs.map((dog) => (
               <Dropdown.Item onClick={(e) => setDogSelect(e.target.innerText)} key={dog.id} eventKey={dog.name}>{dog.name}</Dropdown.Item>
@@ -74,6 +75,7 @@ function CreateAppointment() {
           <DropdownButton
             title={groomerSelect === "" ? "Select a Groomer" : groomerSelect}
             id="dropdown-menu-align-right"
+            variant="dark"
           >
             {groomers.map((groomer) => (
               <Dropdown.Item onClick={(e) => setGroomerSelect(e.target.innerText)} key={groomer.id} eventKey={groomer.name}>{groomer.name}</Dropdown.Item>
@@ -82,6 +84,7 @@ function CreateAppointment() {
           <DropdownButton
             title={serviceSelect === "" ? "Select a Service" : serviceSelect}
             id="dropdown-menu-align-right"
+            variant="dark"
           >
             {services.map((service) => (
               <Dropdown.Item onClick={(e) => setServiceSelect(e.target.innerText)} key={service.id} eventKey={service.name}>{service.name}</Dropdown.Item>

@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router-dom"
-import '../App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Appointment from './Appointment'
 import EditAppointment from './EditAppointment'
@@ -21,8 +20,8 @@ import Navbar from './Navbar'
 
 function App() {
   return (
-    <div className="background">
-      <Navbar />
+    <div>
+      <Navbar /><br></br>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/create-appointment" element={<CreateAppointment />} />
