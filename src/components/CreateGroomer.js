@@ -36,15 +36,15 @@ function CreateGroomer() {
 
   return (
     <Stack gap={3} className="center">
-      <h2>Create a Groomer Profile</h2>
+      <h1 className="font-color">Create a Groomer Profile</h1>
       <div>
         <Form>
           <Form.Group className="mb-3">
-            <Form.Label>Name</Form.Label>
+            <Form.Label><strong>Name</strong></Form.Label>
             <Form.Control required onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="Enter their name..."/>
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Onboarding Date:</Form.Label>
+            <Form.Label><strong>Onboarding Date:</strong></Form.Label>
             <Form.Control onChange={(e) => setOnboardingDate(e.target.value)} type="date" size="sm" />
           </Form.Group>
         </Form>

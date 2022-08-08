@@ -30,7 +30,7 @@ img {
 
 li {
   border: solid;
-  width: fit-content;
+  width: 350px;
   padding: 5px;
   list-style: none;
   background-color: rgb(252, 205, 212);
@@ -39,7 +39,11 @@ li {
 .font-link {
   font-family: 'Pacifico', cursive;
   font-weight: bold;
+}
+
+.font-color {
   color: rgb(252, 205, 212);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .background {
@@ -47,4 +51,9 @@ li {
   margin: 0;
   height: 100%;
   width: 100%;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
 }

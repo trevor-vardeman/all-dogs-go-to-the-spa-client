@@ -35,7 +35,7 @@ function ArchivedDogs() {
   return (
     <Stack gap={3} className="center">
       <div>
-        <h2>Archived Dogs</h2>
+        <h1 className="font-color">Archived Dogs</h1>
         <p>Archived dogs cannot be selected when creating a new appointment.</p>
       </div>
       {archivedDogs.map((dog) => (
@@ -43,9 +43,9 @@ function ArchivedDogs() {
           <ul>
             <li>
               <img src={dog.photo_url} alt={`${dog.name} the ${dog.breed}`}/>
-              <h6><strong>{dog.name}</strong></h6>
-              <h6>Breed: {dog.breed}</h6>
-              <h6>Age: {dog.age}</h6>
+              <h6><strong>Name:</strong> {dog.name}</h6>
+              <h6><strong>Breed:</strong> {dog.breed}</h6>
+              <h6><strong>Age:</strong> {dog.age}</h6>
               <Button onClick={() => handleUnarchive(dog)} size="sm" variant="danger">Unarchive Dog</Button>
             </li>
           </ul>

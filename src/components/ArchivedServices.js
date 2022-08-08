@@ -28,16 +28,16 @@ function ArchivedServices() {
   return (
     <Stack gap={3} className="center">
       <div>
-        <h2>Archived Services</h2>
+        <h1 className="font-color">Archived Services</h1>
         <p>Archived services cannot be selected when creating a new appointment.</p>
       </div>
       {archivedServices.map((service) => (
         <div key={service.id}>
           <li>
-            <h6><strong>{service.name}</strong></h6>
-            <p>{service.description}</p>
-            <h6>Cost: ${service.cost}</h6>
-            <h6>Service Length: {service.service_length} minutes</h6>
+            <h6><strong>Name:</strong> {service.name}</h6>
+            <h6><strong>Description:</strong> {service.description}</h6>
+            <h6><strong>Cost:</strong> ${service.cost}</h6>
+            <h6><strong>Service Length:</strong> {service.service_length} minutes</h6>
             <Button onClick={() => handleUnarchive(service)} size="sm" variant="danger">Unarchive Service</Button>
           </li>
         </div>

@@ -49,23 +49,23 @@ function CreateDog() {
 
   return (
     <Stack gap={3} className="center">
-      <h2>Create a Dog Profile</h2>
+      <h1 className="font-color">Create a Dog Profile</h1>
       <div>
         <Form>
           <Form.Group className="mb-3">
-            <Form.Label>Dog's Name</Form.Label>
+            <Form.Label><strong>Name</strong></Form.Label>
             <Form.Control required onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="Enter the dog's name..."/>
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Dog's Breed</Form.Label>
+            <Form.Label><strong>Breed</strong></Form.Label>
             <Form.Control required onChange={(e) => setBreed(e.target.value)} value={breed} type="text" placeholder="Enter the dog's breed..."/>
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Dog's Age</Form.Label>
+            <Form.Label><strong>Age</strong></Form.Label>
             <Form.Control required onChange={(e) => setAge(e.target.value)} value={age} type="text" placeholder="Enter the dog's age..."/>
           </Form.Group>
           <Form.Group className="mb-3">
-            <Form.Label>Dog's Photo</Form.Label>
+            <Form.Label><strong>Photo</strong></Form.Label>
             <Form.Control onChange={(e) => setPhoto_url(e.target.value)} value={photo_url} type="text" placeholder="Enter a URL to the dog's photo..."/>
             <Form.Text className="text-muted">
             If you don't provide a photo, the random photo above will be used.

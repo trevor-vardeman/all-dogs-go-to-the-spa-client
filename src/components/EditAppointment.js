@@ -71,7 +71,7 @@ function EditAppointment() {
 
   return (
     <Stack gap={3} className="center">
-      <h2>Edit Appointment</h2>
+      <h1 className="font-color">Edit Appointment</h1>
       <div>
         <Stack gap={3}>
           <DropdownButton
@@ -98,10 +98,10 @@ function EditAppointment() {
               <Dropdown.Item onClick={(e) => setServiceSelect(e.target.innerText)} key={service.id} eventKey={service.name}>{service.name}</Dropdown.Item>
             ))}
           </DropdownButton>
-          <p>Current appointment date and time: {appointmentTime}</p>
+          <h6><strong>Current appointment date and time:</strong> {appointmentTime}</h6>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>New appointment date/time:</Form.Label>
+              <Form.Label><strong>New appointment date/time:</strong></Form.Label>
               <Form.Control onChange={(e) => setAppointmentTime(e.target.value)} type="datetime-local" size="sm" />
             </Form.Group>
             <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />

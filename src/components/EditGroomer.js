@@ -32,7 +32,7 @@ function EditGroomer() {
       onboarding_date: onboardingDate,
       offboarding_date: offboardingDate
     }
-    fetch(`http://localhost:9292/groomers/${id}`, {
+    fetch(`http://localhost:9292/groomers/edit/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -51,22 +51,22 @@ function EditGroomer() {
 
   return (
     <Stack gap={3} className="center">
-      <h2>Edit Groomer</h2>
+      <h1 className="font-color">Edit Groomer</h1>
       {groomer ?
         <div key={groomer.id}>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Name</Form.Label>
+              <Form.Label><strong>Name</strong></Form.Label>
               <Form.Control required onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="Enter the employee's name..."/>
             </Form.Group>
             <Form.Group className="mb-3">
-            <p>Current onboarding date: {onboardingDate}</p>
-              <Form.Label>New onboarding date:</Form.Label>
+            <h6><strong>Current onboarding date:</strong> {onboardingDate}</h6>
+              <Form.Label><strong>New onboarding date:</strong></Form.Label>
               <Form.Control onChange={(e) => setOnboardingDate(e.target.value)} type="date" size="sm" />
             </Form.Group>
             <Form.Group className="mb-3">
-              <p>Current offboarding date: {offboardingDate}</p>
-              <Form.Label>New offboarding date:</Form.Label>
+              <h6><strong>Current offboarding date:</strong> {offboardingDate}</h6>
+              <Form.Label><strong>New offboarding date:</strong></Form.Label>
               <Form.Control onChange={(e) => setOffboardingDate(e.target.value)} type="date" size="sm" />
             </Form.Group>
           </Form>

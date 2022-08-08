@@ -35,7 +35,7 @@ function Dogs() {
   return (
     <Stack gap={3} className="center">
       <div>
-        <h2>Active Dogs</h2>
+        <h1 className="font-color">Active Dogs</h1>
         <p>Active dog profiles can be selected when creating a new appointment.</p>
       </div>
       {dogs.map((dog) => (
@@ -43,9 +43,9 @@ function Dogs() {
           <ul>
             <li>
               <img src={dog.photo_url} alt={`${dog.name} the ${dog.breed}`}/>
-              <h6><strong>{dog.name}</strong></h6>
-              <h6>Breed: {dog.breed}</h6>
-              <h6>Age: {dog.age}</h6>
+              <h6><strong>Name:</strong> {dog.name}</h6>
+              <h6><strong>Breed:</strong> {dog.breed}</h6>
+              <h6><strong>Age:</strong> {dog.age}</h6>
               <Button onClick={() => handleArchive(dog)} size="sm" variant="danger">Archive Dog</Button>
             </li>
           </ul>

@@ -21,8 +21,8 @@ function UpcomingAppointments() {
   return (
     <Stack gap={3} className="center">
       <div>
-        <h2>Upcoming Appointments</h2>
-        <p>Click an appointment to edit.</p>
+        <h1 className="font-color">Upcoming Appointments</h1>
+        <p>Click an appointment to edit or cancel.</p>
       </div>
       {upcomingAppointments.map((appt) => (
         <div key={appt.id} onClick={() => handleclick(appt.id)}>

@@ -58,8 +58,8 @@ function CreateAppointment() {
   return (
     <Stack gap={3} className="center">
       <div>
-        <h2>Create an Appointment</h2>
-        <p>If you don't see a dog, groomer, or service, go to their pages above to create a new profile.</p>
+        <h1 className="font-color">Create an Appointment</h1>
+        <p>If you don't see a dog, groomer, or service, go to their pages above to create a new profile or unarchive an existing profile.</p>
       </div>
       <div>
         <Stack gap={3}>
@@ -89,7 +89,7 @@ function CreateAppointment() {
           </DropdownButton>
           <Form>
             <Form.Group className="mb-3">
-              <Form.Label>Appointment date/time:</Form.Label>
+              <Form.Label><strong>Appointment date/time:</strong></Form.Label>
               <Form.Control onChange={(e) => setAppointmentTime(e.target.value)} type="datetime-local" size="sm" />
             </Form.Group>
             <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />

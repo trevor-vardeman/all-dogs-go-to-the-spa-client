@@ -14,13 +14,13 @@ function OffboardedGroomers() {
   return (
     <Stack gap={3} className="center">
       <div>
-        <h2>Offboarded Groomers</h2>
+        <h1 className="font-color">Offboarded Groomers</h1>
         <p>Offboarded groomers cannot be selected when creating a new appointment.</p>
       </div>
       {offboardedGroomers.map((groomer) => (
         <div key={groomer.id}>
           <li>
-            <h3><strong>{groomer.name}</strong></h3>
+            <h6><strong>Name:</strong> {groomer.name}</h6>
             <h6><strong>Onboarding date:</strong> {groomer.onboarding_date}</h6>
             <h6><strong>Offboarding date:</strong> {groomer.offboarding_date}</h6>
           </li>

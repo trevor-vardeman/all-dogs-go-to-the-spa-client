@@ -35,7 +35,7 @@ function Appointment() {
     <Stack gap={3} className="center">
       {appointment ?
         <div key={appointment.id}>
-          <h2>Appointment #{appointment.id}</h2>
+          <h1 className="font-color">Appointment #{appointment.id}</h1>
           <li>
             <img src={appointment.dog.photo_url} alt={`${appointment.dog.name} the ${appointment.dog.breed}`}/>
             <h6><strong>Appointment date/time:</strong> {appointment.appt_datetime}</h6>

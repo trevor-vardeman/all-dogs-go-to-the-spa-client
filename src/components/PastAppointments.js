@@ -13,7 +13,7 @@ function PastAppointments() {
 
   return (
     <Stack gap={3} className="center">
-      <h2>Past Appointments</h2>
+      <h1 className="font-color">Past Appointments</h1>
       {pastAppointments.map((appt) => (
         <div key={appt.id}>
           <li>

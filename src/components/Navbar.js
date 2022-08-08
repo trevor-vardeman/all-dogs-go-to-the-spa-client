@@ -6,10 +6,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 function NavBar() {
   return (
-    <Stack gap={3} direction="horizontal" className="center">
+    <Stack gap={3} direction="horizontal" className="center nav">
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Container>
-          <Navbar.Brand href="/"><span className="font-link">All Dogs Go to the Spa</span></Navbar.Brand>
+          <Navbar.Brand href="/"><span className="font-link font-color">All Dogs Go to the Spa</span></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse className="me-auto">
             <Nav>
