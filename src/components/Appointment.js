@@ -13,7 +13,10 @@ function Appointment() {
     fetch(`http://localhost:9292/appointments/${id}`)
       .then(r => r.json())
       .then(appointment => setAppointment(appointment))
-      .catch(() => alert("Appointment not found!"))
+      .catch(() => {
+        alert("Appointment not found!")
+        navigate("/appointments")
+      })
   },[id])
 
   function handleDelete(apptId) {

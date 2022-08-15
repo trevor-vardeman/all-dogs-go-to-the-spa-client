@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Appointment from './Appointment'
 import EditAppointment from './EditAppointment'
@@ -17,6 +17,7 @@ import CreateService from './CreateService'
 import ArchivedServices from './ArchivedServices'
 import Home from './Home'
 import Navbar from './Navbar'
+import NoMatch from './NoMatch'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/create-service" element={<CreateService />} />
         <Route path="/archived-services" element={<ArchivedServices />} />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>
   )
