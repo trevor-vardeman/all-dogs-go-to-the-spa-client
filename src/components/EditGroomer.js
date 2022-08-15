@@ -32,7 +32,7 @@ function EditGroomer() {
       onboarding_date: onboardingDate,
       offboarding_date: offboardingDate
     }
-    fetch(`http://localhost:9292/groomers/edit/${id}`, {
+    fetch(`http://localhost:9292/groomers/${id}/edit`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -40,6 +40,7 @@ function EditGroomer() {
       body: JSON.stringify(groomerData)
     })
     .then(() => {
+      alert("Groomer updated!")
       setGroomer([])
       setName("")
       setOnboardingDate("")

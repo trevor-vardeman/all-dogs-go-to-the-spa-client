@@ -16,7 +16,7 @@ function Groomers() {
   },[])
 
   function handleEdit(id) {
-    navigate(`/groomers/edit/${id}`)
+    navigate(`/groomers/${id}/edit`)
   }
 
   return (

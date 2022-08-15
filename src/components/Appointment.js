@@ -28,7 +28,7 @@ function Appointment() {
   }
 
   function handleEdit(id) {
-    navigate(`/appointments/edit/${id}`)
+    navigate(`/appointments/${id}/edit`)
   }
 
   return (

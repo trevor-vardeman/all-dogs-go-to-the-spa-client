@@ -51,7 +51,7 @@ function EditAppointment() {
       service_id: serviceId,
       appt_datetime: appointmentTime,
     }
-    fetch(`http://localhost:9292/appointments/edit/${id}`, {
+    fetch(`http://localhost:9292/appointments/${id}/edit`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

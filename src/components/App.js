@@ -27,14 +27,14 @@ function App() {
         <Route path="/create-appointment" element={<CreateAppointment />} />
         <Route path="/appointments" element={<UpcomingAppointments />} />
         <Route path="/appointments/:id" element={<Appointment />} />
-        <Route path="/appointments/edit/:id" element={<EditAppointment />} />
+        <Route path="/appointments/:id/edit" element={<EditAppointment />} />
         <Route path="/past-appointments" element={<PastAppointments />} />
         <Route path="/dogs" element={<Dogs />} />
         <Route path="/create-dog" element={<CreateDog />} />
         <Route path="/archived-dogs" element={<ArchivedDogs />} />
         <Route path="/groomers" element={<Groomers />} />
         <Route path="/create-groomer" element={<CreateGroomer />} />
-        <Route path="/groomers/edit/:id" element={<EditGroomer />} />
+        <Route path="/groomers/:id/edit" element={<EditGroomer />} />
         <Route path="/offboarded-groomers" element={<OffboardedGroomers />} />
         <Route path="/services" element={<Services />} />
         <Route path="/create-service" element={<CreateService />} />
