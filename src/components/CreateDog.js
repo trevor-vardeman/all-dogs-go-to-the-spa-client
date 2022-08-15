@@ -21,30 +21,32 @@ function CreateDog() {
 
   function handleSubmit(e) {
     e.preventDefault()
-
-    const dog = {
-      name: name,
-      breed: breed,
-      age: age,
-      photo_url: photo_url,
-      archived: false,
+    if (!name || !breed || !age || !photo_url) {
+      alert("Please fill out the entire form.")
+    } else {
+      const dog = {
+        name: name,
+        breed: breed,
+        age: age,
+        photo_url: photo_url,
+        archived: false,
+      }
+      fetch("http://localhost:9292/create-dog", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(dog),
+      })
+      .then(() => {
+        alert("Dog saved!")
+        setName("")
+        setBreed("")
+        setAge("")
+        setPhoto_url("")
+        navigate(`/dogs`)
+      })
     }
-
-    fetch("http://localhost:9292/create-dog", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(dog),
-    })
-    .then(() => {
-      alert("Dog saved!")
-      setName("")
-      setBreed("")
-      setAge("")
-      setPhoto_url("")
-      navigate(`/dogs`)
-    })
   }
 
   return (
@@ -62,7 +64,7 @@ function CreateDog() {
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label><strong>Age</strong></Form.Label>
-            <Form.Control required onChange={(e) => setAge(e.target.value)} value={age} type="text" placeholder="Enter the dog's age..."/>
+            <Form.Control required onChange={(e) => setAge(e.target.value)} value={age} type="number" placeholder="Enter the dog's age..."/>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label><strong>Photo</strong></Form.Label>

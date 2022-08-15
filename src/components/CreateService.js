@@ -14,30 +14,32 @@ function CreateService() {
 
   function handleSubmit(e) {
     e.preventDefault()
-
-    const service = {
-      name: name,
-      description: description,
-      cost: cost,
-      service_length: serviceLength,
-      archived: false
+    if (!name || !description || !cost || !serviceLength) {
+      alert("Please fill out the entire form.")
+    } else {
+      const service = {
+        name: name,
+        description: description,
+        cost: cost,
+        service_length: serviceLength,
+        archived: false
+      }
+      fetch("http://localhost:9292/create-service", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(service),
+      })
+      .then(() => {
+        alert("Service saved!")
+        setName("")
+        setDescription("")
+        setCost("")
+        setServiceLength("")
+        navigate("/services")
+      })
     }
-
-    fetch("http://localhost:9292/create-service", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(service),
-    })
-    .then(() => {
-      alert("Service saved!")
-      setName("")
-      setDescription("")
-      setCost("")
-      setServiceLength("")
-      navigate("/services")
-    })
   }
 
   return (
@@ -47,19 +49,19 @@ function CreateService() {
         <Form>
           <Form.Group className="mb-3">
             <Form.Label><strong>Name</strong></Form.Label>
-            <Form.Control required onChange={(e) => setName(e.target.value)} value={name} type="text" size="sm" placeholder="Name of the service..."/>
+            <Form.Control onChange={(e) => setName(e.target.value)} value={name} type="text" size="sm" placeholder="Name of the service..."/>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label><strong>Description</strong></Form.Label>
-            <Form.Control required onChange={(e) => setDescription(e.target.value)} value={description} type="text" size="sm" placeholder="Describe the service..."/>
+            <Form.Control onChange={(e) => setDescription(e.target.value)} value={description} type="text" size="sm" placeholder="Describe the service..."/>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label><strong>Cost</strong></Form.Label>
-            <Form.Control required onChange={(e) => setCost(e.target.value)} value={cost} type="number" size="sm" placeholder="Cost of the service..."/>
+            <Form.Control onChange={(e) => setCost(e.target.value)} value={cost} type="number" size="sm" placeholder="Cost of the service..."/>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label><strong>Service Length (Minutes)</strong></Form.Label>
-            <Form.Control required onChange={(e) => setServiceLength(e.target.value)} value={serviceLength} type="number" size="sm" placeholder="Length of the service..."/>
+            <Form.Control onChange={(e) => setServiceLength(e.target.value)} value={serviceLength} type="number" size="sm" placeholder="Length of the service..."/>
           </Form.Group>
         </Form>
         <Button onClick={handleSubmit} as="input" type="submit" value="Submit" />

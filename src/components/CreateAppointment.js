@@ -29,30 +29,34 @@ function CreateAppointment() {
 
   function handleSubmit(e) {
     e.preventDefault()
-    const dogId = dogs.find(dog => dog.name === dogSelect).id
-    const groomerId = groomers.find(groomer => groomer.name === groomerSelect).id
-    const serviceId = services.find(service => service.name === serviceSelect).id
-    const appointmentData = {
-      dog_id: dogId,
-      groomer_id: groomerId,
-      service_id: serviceId,
-      appt_datetime: appointmentTime,
-    }
-    fetch("http://localhost:9292/create-appointment", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(appointmentData),
-    })
-      .then(() => {
-        alert("Appointment saved!")
-        setDogSelect("")
-        setGroomerSelect("")
-        setServiceSelect("")
-        setAppointmentTime("")
-        navigate('/appointments')
+    if (!dogSelect || !groomerSelect || !serviceSelect || !appointmentTime) {
+      alert("Please fill out the entire form")
+    } else {
+      const dogId = dogs.find(dog => dog.name === dogSelect).id
+      const groomerId = groomers.find(groomer => groomer.name === groomerSelect).id
+      const serviceId = services.find(service => service.name === serviceSelect).id
+      const appointmentData = {
+        dog_id: dogId,
+        groomer_id: groomerId,
+        service_id: serviceId,
+        appt_datetime: appointmentTime,
+      }
+      fetch("http://localhost:9292/create-appointment", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(appointmentData),
       })
+        .then(() => {
+          alert("Appointment saved!")
+          setDogSelect("")
+          setGroomerSelect("")
+          setServiceSelect("")
+          setAppointmentTime("")
+          navigate('/appointments')
+        })
+    }
     }
 
   return (

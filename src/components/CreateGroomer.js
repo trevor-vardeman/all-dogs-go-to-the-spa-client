@@ -12,26 +12,28 @@ function CreateGroomer() {
 
   function handleSubmit(e) {
     e.preventDefault()
-
-    const groomer = {
-      name: name,
-      onboarding_date: onboardingDate,
-      offboarding_date: ""
+    if (!name || !onboardingDate) {
+      alert("Please fill out the entire form.")
+    } else {
+      const groomer = {
+        name: name,
+        onboarding_date: onboardingDate,
+        offboarding_date: ""
+      }
+      fetch("http://localhost:9292/create-groomer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(groomer),
+      })
+      .then(() => {
+        alert("Groomer saved!")
+        setName("")
+        setOnboardingDate("")
+        navigate("/groomers")
+      })
     }
-
-    fetch("http://localhost:9292/create-groomer", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(groomer),
-    })
-    .then(() => {
-      alert("Groomer saved!")
-      setName("")
-      setOnboardingDate("")
-      navigate("/groomers")
-    })
   }
 
   return (
@@ -41,7 +43,7 @@ function CreateGroomer() {
         <Form>
           <Form.Group className="mb-3">
             <Form.Label><strong>Name</strong></Form.Label>
-            <Form.Control required onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="Enter their name..."/>
+            <Form.Control onChange={(e) => setName(e.target.value)} value={name} type="text" placeholder="Enter their name..."/>
           </Form.Group>
           <Form.Group className="mb-3">
             <Form.Label><strong>Onboarding Date:</strong></Form.Label>
