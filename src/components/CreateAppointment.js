@@ -30,7 +30,7 @@ function CreateAppointment() {
   function handleSubmit(e) {
     e.preventDefault()
     if (!dogSelect || !groomerSelect || !serviceSelect || !appointmentTime) {
-      alert("Please fill out the entire form")
+      alert("Please fill out the entire form.")
     } else {
       const dogId = dogs.find(dog => dog.name === dogSelect).id
       const groomerId = groomers.find(groomer => groomer.name === groomerSelect).id
